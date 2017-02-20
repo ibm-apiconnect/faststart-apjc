@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you will learn how to create an API that connecting to a **RESTful** backend. It covers define and use **Parameter** and **Definition**, **Inlin...">
+<meta name="keywords" content=" ">
+<title>Lab 1 - Create API to RESTful backend | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  active">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 1 - Create API to RESTful backend</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you will learn how to create an API that connecting to a **RESTful** backend. It covers define and use **Parameter** and **Definition**, **Inline Schema** and **Map Assembly**.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to define input parameter and definition for the API</li>
+  <li>How to use the input parameter and definition in the API Assembly</li>
+  <li>How to create inline schema from sample JSON</li>
+  <li>How to use Map to create HTTP body for the RESTful backend</li>
+</ul>
+
+<p><img src="images/apjc/00.01.png" alt="" /></p>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study used in this tutorial</h2>
+<p>In this tutorial, you will be creating new API for a banking customer to initiate a fund transfer to another account. The API will accept JSON body via HTTP POST. You will need to access the parameter in url and JSON body to prepare the input parameter for the RESTful backend.</p>
+
+<h2 id="before-you-begin">Before you begin</h2>
+<p>For this lab, you need to have a Bluemix account and enabling the API Connect Essentials service on your account.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="create-the-transfer-api-definition">2.1 - Create the Transfer API Definition</h3>
+
+<ol>
+  <li>Go to the Drafts screen by click on “»” to bring up the side menu and select “Drafts”</li>
+</ol>
+
+<p><img src="images/apjc/01.01.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>Select “APIs” tab</p>
+  </li>
+  <li>
+    <p>Click “Add” and select “New API”</p>
+  </li>
+</ol>
+
+<p><img src="images/apjc/01.02.png" alt="" /></p>
+
+<ol>
+  <li>In the new API pop-up dialog, fill up the details as following:</li>
+</ol>
+
+<p><img src="images/apjc/01.03.png" alt="" /></p>
+
+<h3 id="create-definitions">2.2 - Create Definitions</h3>
+
+<ol>
+  <li>
+    <p>Next, you’re going to define the JSON object for the HTTP body input. The JSON object holds the transfer details.</p>
+  </li>
+  <li>
+    <p>Scroll to <strong>Definitions</strong> section and click “+” to create new Definition.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add Property</strong> 4 times and fill out the details as following:</p>
+  </li>
+</ol>
+
+<p><img src="images/apjc/02.01.png" alt="" /></p>
+
+<h3 id="define-parameters">2.3 - Define Parameters</h3>
+
+<p>In this section, we will define 2 parameters:
+  + First is the parameter in the API URI. The parameter is the user’s bank account number. In the case: https://gateway/transfers/<strong>{accountNumber}</strong>
+  + Second is the parameter in the HTTP body. The parameter is the transfer details which you have defined in the prior steps.</p>
+
+<ol>
+  <li>
+    <p>Scroll down to <strong>Parameters</strong> section</p>
+  </li>
+  <li>
+    <p>Click “+” to create a new parameter <strong>accountNumber</strong> and fill up the details as following. Do note you need to select <strong>Path</strong> in the Located in drop-down field.</p>
+  </li>
+</ol>
+
+<p><img src="images/apjc/03.01.png" alt="" /></p>
+
+<ol>
+  <li>Create another parameter <strong>transferDetail</strong>,  and this time will  select <strong>Body</strong> in the <strong>Located in</strong> and <strong>Transfer</strong> as <strong>Type</strong>. Do note the screen doesn’t display <strong>Transfer</strong> even after you have selected it.</li>
+</ol>
+
+<p><img src="images/apjc/03.02.png" alt="" /></p>
+
+<h3 id="define-api-endpoint-and-input">2.4 - Define API Endpoint and Input</h3>
+
+<p>Next, we will define the API endpoint and input parameters for API consumer</p>
+
+<ol>
+  <li>
+    <p>Scroll to <strong>Path</strong> section and create a new path. Enter <strong>/{accountNumber}</strong> as the Path.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add Parameter</strong> and select <strong>accountNumber</strong> from the list.</p>
+  </li>
+  <li>
+    <p>Repeat the last step to add <strong>transferDetail</strong> parameter. Your settings should be as following:
+  <img src="images/apjc/04.01.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Delete the default “Get” operation.</p>
+  </li>
+  <li>
+    <p><strong>Add Operation</strong> and select <strong>Post</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="api-assembly">2.5 - API Assembly</h3>
+
+<p>In this section, we will learn how to use <strong>Parameters</strong> in the <strong>Map</strong> Assembly.</p>
+
+<ol>
+  <li>Click on <strong>Assemble</strong> tab</li>
+</ol>
+
+<p><img src="images/apjc/05.01.png" alt="" /></p>
+
+<ol>
+  <li>Drag <strong>Map</strong> assembly and place it before <strong>Invoke</strong>.</li>
+</ol>
+
+<p><img src="images/apjc/05.02.png" alt="" /></p>
+
+<ol>
+  <li>Click on “+” to maximize the <strong>Map</strong> configuration screen.</li>
+</ol>
+
+<p><img src="images/apjc/05.03.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>Click on the “pencil” icon to “Edit Input”</p>
+  </li>
+  <li>
+    <p>Click <strong>+ parameters for operation…</strong> button and select <strong>post/{accountNumber}</strong> operation.</p>
+  </li>
+</ol>
+
+<p><img src="images/apjc/05.04.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>Click “Done” to close the “Edit Input” screen.</p>
+  </li>
+  <li>
+    <p>Click on the “pencil” icon to “Edit Output”</p>
+  </li>
+  <li>
+    <p>Click on “+ outputs for operation…”</p>
+  </li>
+  <li>
+    <p>Select “Inline schema” in the <strong>Definition</strong> drop-down</p>
+  </li>
+</ol>
+
+<p><img src="images/apjc/05.05.png" alt="" /></p>
+
+<ol>
+  <li>In the “Provide a schema” pop-up dialog, select “Generate from sample JSON”. Copy and paste following sample JSON.</li>
+</ol>
+
+<p><code class="highlighter-rouge">bash
+  {
+    "fromAccountNumber":"123-123-123-3",
+    "toAccountNumber":"123-123-123-3",
+    "amount":199.99,
+    "remarks":"online purchase"
+  }
+ </code>
+  <img src="images/apjc/05.06.png" alt="" /></p>
+
+<ol>
+  <li>Click “Generate” button. API Connect will generate the schema in YAML format as the following screen:</li>
+</ol>
+
+<p><img src="images/apjc/05.07.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>Click “Done” to close the “Provide a schema” dialog.</p>
+  </li>
+  <li>
+    <p>Click “Done” to close the Output.</p>
+  </li>
+</ol>
+
+<p><img src="images/apjc/05.08.png" alt="" /></p>
+
+<ol>
+  <li>Click <strong>accountNumber</strong> from Input and link to <strong>fromAccountNumber</strong> Output. Do the rest as following screen:</li>
+</ol>
+
+<p><img src="images/apjc/05.09.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>Click the X to close the Map assembly.</p>
+  </li>
+  <li>
+    <p>Click on <strong>Invoke</strong> assembly and enter the following URL:</p>
+  </li>
+</ol>
+
+<p><code class="highlighter-rouge">
+  http://www.mocky.io/v2/57f281c90f0000a81ae25309
+ </code></p>
+
+<p><img src="images/apjc/05.10.png" alt="" /></p>
+
+<h3 id="test-api">2.6 - Test API</h3>
+
+<p>In this section, we will learn how to test the API in the Assembly.</p>
+
+<ol>
+  <li>Click on the “Play” button. The test panel will expand at the left.</li>
+</ol>
+
+<p><img src="images/apjc/06.01.png" alt="" /></p>
+
+<ol>
+  <li>You need to setup the <strong>Product</strong> for this new API. Enter <strong>Transfers</strong> in the new product <strong>Name</strong>. Click <strong>Create and Publish</strong> button. Then click the next button.</li>
+</ol>
+
+<p><img src="images/apjc/06.02.png" alt="" /></p>
+
+<ol>
+  <li>Select the <strong>post/{accountNumber}</strong> Operation to be tested</li>
+</ol>
+
+<p><img src="images/apjc/06.03.png" alt="" /></p>
+
+<ol>
+  <li>Enter a test parameter for accountNumber <strong>123-123-123-3</strong>. For <strong>transferDetails</strong>, you can click on <strong>Generate</strong> to let the system generate sample data automatically.</li>
+</ol>
+
+<p><img src="images/apjc/06.04.png" alt="" /></p>
+
+<ol>
+  <li>Click <strong>Invoke</strong> button to invoke the API. You should receive response as following:</li>
+</ol>
+
+<p><img src="images/apjc/06.05.png" alt="" /></p>
+
+<ol>
+  <li>Click on <strong>Debug</strong> button to inspect the assembly details:</li>
+</ol>
+
+<p><img src="images/apjc/06.06.png" alt="" /></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

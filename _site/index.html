@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="IBM API Connect is an end-to-end API management solution for creating, running, managing, and securing APIs.">
+<meta name="keywords" content=" ">
+<title>Getting Started with API Connect | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Getting Started with API Connect</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">IBM API Connect is an end-to-end API management solution for creating, running, managing, and securing APIs.</div>
+   
+
+    
+
+    
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

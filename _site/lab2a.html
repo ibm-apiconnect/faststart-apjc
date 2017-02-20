@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you’ll gain a high level understanding of the architecture, features and development concepts related to the IBM API Connect (APIC) solution. Th...">
+<meta name="keywords" content=" ">
+<title>Lab 2 - Create a Loopback Application | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 2 - Create a Loopback Application</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you’ll gain a high level understanding of the architecture, features and development concepts related to the IBM API Connect (APIC) solution. Throughout the lab, you’ll get a chance to use the APIC command line interface for creating LoopBack applications, the intuitive web-based user interface, and explore the various aspects associated with the solution’s configuration of RESTful based services as well as their operation. At the end of this lab you will have created an new application which provides access to product inventory via a set of API resource operations.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to create a multi-model Loopback application</li>
+  <li>How to create a Representational State Transfer (REST) API definition using IBM Connect API Designer</li>
+  <li>How to create a Representational State Transfer (REST) API definition using IBM Connect Command Line</li>
+  <li>How to use the Loopback Cloudant Connector</li>
+  <li>How to test a REST API</li>
+  <li>How to create relationships between models</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p><strong>ThinkIBM</strong> is a company which sells historical and rare IBM machinery. <strong>ThinkIBM</strong> wants to create easier acess to their inventory database through a collection of APIs. Additionally, the application should also support the ability for buyers to leave reviews. As an application developer, you will create the application that provides access to product inventory.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="create-a-working-directory">2.1 - Create a Working Directory</h3>
+
+<ol>
+  <li>
+    <p>Open up a new window for your Host Operating systems’ command line interface (e.g. <code class="highlighter-rouge">cmd</code> for Windows or <code class="highlighter-rouge">terminal</code> for Linux).</p>
+  </li>
+  <li>
+    <p>Create a project directory in the on your filesystem called ThinkIBM.</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>mkdir ThinkIBM
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Change to the new <code class="highlighter-rouge">ThinkIBM</code> directory by typing:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>ThinkIBM
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="create-the-inventory-app">2.2 - Create the Inventory App</h3>
+
+<p>To create your Inventory Application you will use LoopBack technology that comes with the API Connect Developer Toolkit. LoopBack enables you to quickly compose scalable APIs, runs on top of the Express web framework and conforms to the Swagger 2.0 specification. LoopBack is a highly-extensible, open-source Node.js framework that enables you to:</p>
+
+<ul>
+  <li>Create dynamic end-to-end REST APIs with little or no coding.</li>
+  <li>Access data from Relational and NoSQL Databases, SOAP and other REST APIs.</li>
+  <li>Incorporates model relationships and access controls for complex APIs.</li>
+</ul>
+
+<p>LoopBack consists of:</p>
+
+<ul>
+  <li>A library of Node.js modules.</li>
+  <li>Yeoman generators for scaffolding applications.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>From the command line terminal, type the following command to create the <code class="highlighter-rouge">inventory</code> application:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>apic loopback
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>You will be asked to name your application. Call it <code class="highlighter-rouge">inventory</code> and press the <code class="highlighter-rouge">Enter</code> or <code class="highlighter-rouge">Return</code> key.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>     _-----_
+    |       |    .--------------------------.
+    |--(o)--|    |  Let's create a LoopBack |
+   `---------´   |       application!       |
+    ( _´U`_ )    '--------------------------'
+    /___A___\    
+     |  ~  |     
+   __'.___.'__   
+ ´   `  |° ´ Y `
+     
+? What's the name of your application? (ThinkIBM) inventory
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Next you will be asked to supply the name of the directory where the application will be created.</p>
+
+    <p>LoopBack will default the project directory name to the name of the application.</p>
+
+    <p>Press the <code class="highlighter-rouge">Enter</code> or <code class="highlighter-rouge">Return</code> key to accept the default value of <code class="highlighter-rouge">inventory</code>.</p>
+  </li>
+  <li>
+    <p>Next you will be asked to select the type of application.</p>
+
+    <p>Use the arrow keys to select the <code class="highlighter-rouge">empty-server</code> option and press the <code class="highlighter-rouge">Enter</code> or <code class="highlighter-rouge">Return</code> key.</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>❯ empty-server <span class="o">(</span>An empty LoopBack API, without any configured models or datasources<span class="o">)</span> 
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>At this point, the project builder will install the core dependencies for our Node.js application.</p>
+
+    <p>Please wait until you see the <code class="highlighter-rouge">Next steps:</code> section.</p>
+  </li>
+  <li>
+    <p>Change to the newly created <code class="highlighter-rouge">inventory</code> directory:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>inventory
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="create-a-data-source-connector-to-cloudant">2.3 - Create a Data Source Connector to Cloudant</h3>
+
+<p>The datasource is what allows the API to communicate with the backend data repository. In this case we will be using Cloudant to store the inventory item information.</p>
+
+<p>There are two parts to this. First is the definition of how to connect to the backend system. The second is downloading the actual loopback connector for Cloudant. The connector is akin to an ODBC or JDBC connector.</p>
+
+<ol>
+  <li>
+    <p>In your terminal ensure that you are in the <code class="highlighter-rouge">ThinkIBM/inventory</code> directory.</p>
+  </li>
+  <li>
+    <p>In your terminal, type:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>apic create --type datasource
+</code></pre>
+    </div>
+
+    <p>The terminal will bring up the configuration wizard for our new datasource for the item database. The configuration wizard will prompt you with a series of questions. Some questions require text input, others offer a selectable menu of pre-defined choices.</p>
+
+    <p>Answer the questions with the following data:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>? Enter the data-source name: item-db-cloudant
+? Select the connector for item-db-cloudant: IBM Cloudant DB (supported by StrongLoop)
+Connector-specific configuration:
+? Connection String url to override other settings (eg: https://username:password@host): https://820923e0-be08-46f5-a34a-003f91f00f5c-bluemix:10d585c237c8d7b599b79cfcca39cb63356f2cea7d79abf27f284801b3c149d9@820923e0-be08-46f5-a34a-003f91f00f5c-bluemix.cloudant.com
+? database: item
+? username: (leave blank)
+? password: (leave blank)
+? modelIndex: (leave blank)
+</code></pre>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    By typing Y (Yes) to the question <code class="highlighter-rouge">Install loopback-connector-cloudant</code>, the Cloudant Connector will be downloaded and saved to your project automatically. 
+    <br /><br />
+    This will create a connection profile in the <code class="highlighter-rouge">~/ThinkIBM/inventory/server/datasources.json</code> file. It is effectively the same as running the following to install the connector:
+    <br /><br /> 
+    <code class="highlighter-rouge">npm install loopback-connector-cloudant --save</code>
+    <br /><br />
+    For more information on the LoopBack Connector for Cloudant, see:
+    <br /><br />
+    <a href="https://www.npmjs.com/package/loopback-connector-cloudant">https://www.npmjs.com/package/loopback-connector-cloudant</a></p>
+    </div>
+  </li>
+</ol>
+
+<h3 id="launch-the-api-connect-designer">2.4 - Launch the API Connect Designer</h3>
+
+<ol>
+  <li>
+    <p>Ensure you’re in the <code class="highlighter-rouge">~/ThinkIBM/inventory</code> directory, then type the following command:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>apic edit
+</code></pre>
+    </div>
+
+    <p>The Firefox web browser will launch and automatically load the designer screen.</p>
+  </li>
+  <li>
+    <p>Now that the API Designer is running, you should see the start page with your <code class="highlighter-rouge">inventory</code> API.</p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />This API was created as a result of the generation of our LoopBack application.</p>
+    </div>
+  </li>
+</ol>
+
+<h3 id="create-a-model-for-the-inventory-items">2.5 - Create a Model for the Inventory Items</h3>
+
+<p>In this section, you will define the <code class="highlighter-rouge">item</code> data model for our <code class="highlighter-rouge">inventory</code> API and attach it to the Cloudant data source. LoopBack is a data model driven framework. The properties of the data model will become the JSON elements of the API request and response payloads.</p>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Models</code> tab.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/api-designer-model-design-page.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+ Add</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/api-designer-model-design-page-add-button.png" alt="" /></p>
+  </li>
+  <li>
+    <p>In the New LoopBack Model dialog, enter <code class="highlighter-rouge">item</code> as the model name, then click the <code class="highlighter-rouge">New</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/api-designer-model-design-page-new-model.png" alt="" /></p>
+  </li>
+  <li>
+    <p>When the Model edit page for the item model displays, select the <code class="highlighter-rouge">item-db-cloudant</code> Data Source:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/1.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="create-properties-for-the-item-model">2.6 - Create Properties for the <code class="highlighter-rouge">item</code> Model</h3>
+
+<p>The item table in the database has 6 columns that will need to mapped as well. To start creating properties for the item model:</p>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+</code> button in the <strong>Properties</strong> section.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/properties26.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">item</code> data model consists of six properties. Use the data below to add each of the properties:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Required</th>
+          <th>Property Name</th>
+          <th>Is Array</th>
+          <th>Type</th>
+          <th>ID</th>
+          <th>Index</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>yes</td>
+          <td>name</td>
+          <td>no</td>
+          <td>string</td>
+          <td>no</td>
+          <td>no</td>
+          <td>item name</td>
+        </tr>
+        <tr>
+          <td>yes</td>
+          <td>description</td>
+          <td>no</td>
+          <td>string</td>
+          <td>no</td>
+          <td>no</td>
+          <td>item description</td>
+        </tr>
+        <tr>
+          <td>yes</td>
+          <td>img</td>
+          <td>no</td>
+          <td>string</td>
+          <td>no</td>
+          <td>no</td>
+          <td>location of item image</td>
+        </tr>
+        <tr>
+          <td>yes</td>
+          <td>img_alt</td>
+          <td>no</td>
+          <td>string</td>
+          <td>no</td>
+          <td>no</td>
+          <td>item image title</td>
+        </tr>
+        <tr>
+          <td>yes</td>
+          <td>price</td>
+          <td>no</td>
+          <td>number</td>
+          <td>no</td>
+          <td>no</td>
+          <td>item price</td>
+        </tr>
+        <tr>
+          <td>no</td>
+          <td>rating</td>
+          <td>no</td>
+          <td>number</td>
+          <td>no</td>
+          <td>no</td>
+          <td>item rating</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>Scroll to the top of the page and click the <code class="highlighter-rouge">Save</code> button to save the data model.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/api-designer-model-design-page-model-properties-save.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">All Models</code> link to return to the main API Designer page.</p>
+  </li>
+</ol>
+
+<h3 id="verify-api">2.7 - Verify API</h3>
+
+<p>To confirm that the API has been correctly mapped and can interface with the datasource, you will run the server and test the API.</p>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Run</code> button to start the <code class="highlighter-rouge">inventory</code> LoopBack application</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/run.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Wait a moment while the servers are started. Proceed to the next step when you see the following:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/app-running.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Explore</code> button to review your APIs.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/explore.png" alt="" /></p>
+  </li>
+  <li>
+    <p>On the left side of the page, notice the list of paths for the <code class="highlighter-rouge">inventory</code> API. These are the paths and operations that were automatically created for you by the LoopBack framework simply by adding the <code class="highlighter-rouge">item</code> data model. The operations allow users the ability to create, update, delete and query the data model from the connected data source.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">GET /items</code> operation.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/api-designer-explore-page-get-items-api.png" alt="" /></p>
+  </li>
+  <li>
+    <p>By clicking the <code class="highlighter-rouge">GET /items</code> operation, your screen will auto-focus to the correct location in the window. In the center pane you will see a summary of the operation, as well as optional parameters and responses.</p>
+
+    <p>On the right side you will see sample code for executing the API in various programming languages and tools such as cURL.</p>
+
+    <p>In addition to the sample code, if you look further down the page you will see an example response, URL, API identification information, and API parameters.</p>
+  </li>
+  <li>
+    <p>Scroll down slowly to locate the <code class="highlighter-rouge">Call operation</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/api-designer-explore-page-call-operation.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Call operation</code> button to invoke the API.</p>
+
+    <div class="alert alert-troubleshooting" role="alert">
+      <p><i class="fa fa-cog"></i> <b>Troubleshooting:</b> <br />The first time you invoke the API, you may receive an error. The error occurs becuase the browser does not trust the self-signed certificate from the MicroGateway. To resolve the error, click on the link in the response window and accept the certificate warning.</p>
+    </div>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/cert-error.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once complete, return to the API explorer and click on the <code class="highlighter-rouge">Call operation</code> button again.</p>
+  </li>
+  <li>
+    <p>Scroll down to see the <code class="highlighter-rouge">Request</code> and <code class="highlighter-rouge">Response</code> headers.</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Request
+GET https://localhost:4002/inventory/items
+APIm-Debug: true
+Content-Type: application/json
+Accept: application/json
+X-IBM-Client-Id: default
+X-IBM-Client-Secret: SECRET
+</code></pre>
+    </div>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Response
+Code: 200 OK
+Headers:
+content-type: application/json; charset=utf-8
+x-ratelimit-limit: 100
+x-ratelimit-remaining: 99
+x-ratelimit-reset: 3599999
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Scroll further and the payload returned from the GET request is displayed.</p>
+
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dayton Meat Chopper"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Punched-card tabulating machines and time clocks..."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"images/items/meat-chopper.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"img_alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dayton Meat Chopper"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">4599.99</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Test the <code class="highlighter-rouge">GET /items/count</code> operation by following the same process above. You should receive a count of inventory items.</p>
+
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Stop</code> button to shut down the running application.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/stop-application.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">X</code> in the top-right portion of the screen to leave the API Explorer view.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/leave-explorer.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="create-the-second-cloudant-data-source-for-item-reviews">2.8 - Create the second Cloudant Data Source for Item Reviews</h3>
+
+<p>So far, we have created a LoopBack application which provides APIs around our inventory items stored in a Cloudant database in Bluemix.</p>
+
+<p>In the next section, you will create the data model for item reviews which will use Cloudant to store the review data.</p>
+
+<p>First you must create a data source entry for the Cloudant Reviews DB.</p>
+
+<p>In the earlier steps, you used the command line to create a data source connection. This time you will use the API Designer.</p>
+
+<ol>
+  <li>
+    <p>From the top navigation menu, select the <code class="highlighter-rouge">Data Sources</code> link to switch views.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/data-sources.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Add +</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/add-new-datasource.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Name the new datasource <code class="highlighter-rouge">review-db-cloudant</code> and click the <code class="highlighter-rouge">New</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/add-new-datasource-name.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Complete the new datasource configuration using the values in the table below.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>URL</td>
+          <td>https://820923e0-be08-46f5-a34a-003f91f00f5c-bluemix:10d585c237c8d7b599b79cfcca39cb63356f2cea7d79abf27f284801b3c149d9@820923e0-be08-46f5-a34a-003f91f00f5c-bluemix.cloudant.com</td>
+        </tr>
+        <tr>
+          <td>Database</td>
+          <td>review</td>
+        </tr>
+        <tr>
+          <td>Username</td>
+          <td><leave blank=""></leave></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><leave blank=""></leave></td>
+        </tr>
+        <tr>
+          <td>Model Index</td>
+          <td><leave blank=""></leave></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Save</code> icon to save the new data source connection. The toolkit will test the connection and report back.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/add-new-datasource-success.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="create-model-for-reviews">2.9 - Create Model for Reviews</h3>
+
+<p>The <code class="highlighter-rouge">review</code> data model will be used to store item reviews left by buyers. The reviews will be stored in a Cloudant.</p>
+
+<p>In the earlier steps, you used the API Designer User Experience to create a data model. This time you will use the command line to create the <code class="highlighter-rouge">review</code> model.</p>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">x</code> button on your browser tab to close the API Designer.</p>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">Terminal Emulator</code> from the taskbar to open the command line.</p>
+  </li>
+  <li>
+    <p>Even though we closed the browser, the API Designer application itself is still running.</p>
+
+    <p>Hold the <code class="highlighter-rouge">control</code> key and press the <code class="highlighter-rouge">c</code> key to end the API Designer session:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>control+c
+</code></pre>
+    </div>
+
+    <p>This will return you to the command line prompt.</p>
+  </li>
+  <li>
+    <p>Type the following command to create the <code class="highlighter-rouge">review</code> data model:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>apic create --type model
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Enter the properties for the <code class="highlighter-rouge">review</code> model:</p>
+
+    <div class="alert alert-warning" role="alert">
+      <p><i class="fa fa-warning"></i> <b>Important:</b> <br />You will <strong>not</strong> expose the review mode as a REST API. This is because you create a relationship between item and review later that will create the REST APIs you will use.</p>
+    </div>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>? Enter the model name:  review
+? Select the data-source to attach review to:
+	&gt; review-db-cloudant (cloudant)
+? Select models base class:
+	&gt; PersistedModel
+? Expose review via the REST API? (Y/n):  N
+? Common model or server only?
+	&gt; common
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Continue using the wizard to add properties for the <code class="highlighter-rouge">review</code> model:</p>
+  </li>
+  <li>
+    <p>The first property is the <code class="highlighter-rouge">date</code> property:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Enter an empty property name when done.
+? Property name: date
+? Property type:
+	&gt; date
+?Required? Y
+?Default value [leave blank for none]: &lt;leave blank&gt;"
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Next add the <code class="highlighter-rouge">reviewer_name</code> property:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Let's add another review property.
+Enter an empty property name when done.
+? Property name: reviewer_name
+? Property type:
+	&gt; string
+? Required? N
+? Default value [leave blank for none]: &lt;leave blank&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Next add the <code class="highlighter-rouge">reviewer_email</code> property:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Let's add another review property.
+Enter an empty property name when done.
+? Property name: reviewer_email
+? Property type:
+	&gt; string
+? Required? N
+? Default value [leave blank for none]: &lt;leave blank&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Next add the <code class="highlighter-rouge">comment</code> property:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Let's add another review property.
+Enter an empty property name when done.
+? Property name: comment
+? Property type:
+	&gt; string
+? Required? N
+? Default value [leave blank for none]: &lt;leave blank&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Finally add a property for the item <code class="highlighter-rouge">rating</code>:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>Let's add another review property.
+Enter an empty property name when done.
+? Property name: rating
+? Property type:
+	&gt; number
+? Required? Y
+? Default value [leave blank for none]: &lt;leave blank&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>To close the wizard, the next time it asks you to add another review proporty, just press <code class="highlighter-rouge">Enter</code> or <code class="highlighter-rouge">Return</code> to exit.</p>
+  </li>
+</ol>
+
+<h3 id="create-a-relationship-between-the-item-and-review-data-models">2.10 - Create a Relationship Between the <code class="highlighter-rouge">item</code> and <code class="highlighter-rouge">review</code> Data Models</h3>
+
+<p>The next step in this lab is to create a relationship between the <code class="highlighter-rouge">item</code> model and the <code class="highlighter-rouge">review</code> model. Even though the models reference entities in entirely different databases, API Connect provides a way to create a logical relationship between them. This logical relationship is then exposed as additional operations for the item model.</p>
+
+<ol>
+  <li>
+    <p>In the terminal session, type the following command:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>apic loopback:relation
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Enter the details for the relationship as follows:</p>
+
+    <div class="language-text highlighter-rouge"><pre class="highlight"><code>? Select the model to create the relationship from:
+	&gt; item
+? Relation type:
+	&gt; has many
+? Choose a model to create a relationship with:
+	&gt; review
+? Enter the property name for the relation:  reviews
+? Optionally enter a custom foreign key: &lt;leave blank&gt;
+? Require a through model? No
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="verify-the-relationship">2.11 - Verify the Relationship</h3>
+
+<p>To verify that the relationship has been created, you will open the API Connect Designer and view the operations on the Explore page.</p>
+
+<ol>
+  <li>
+    <p>In the terminal session, type the following command to launch the API Connect Designer window:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>apic edit
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">inventory</code> link from the APIs tab.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/inventory-link.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the <code class="highlighter-rouge">Paths</code> section of the API definition.</p>
+
+    <p>Notice how three new API paths have been created which allow access to item revew data:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab2/new-paths.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">x</code> button on your browser tab to close the API Designer.</p>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">Terminal Emulator</code> from the taskbar to open the command line.</p>
+  </li>
+  <li>
+    <p>Even though we closed the browser, the API Designer application itself is still running.</p>
+
+    <p>Hold the <code class="highlighter-rouge">control</code> key and press the <code class="highlighter-rouge">c</code> key to end the API Designer session:</p>
+
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>control+c
+</code></pre>
+    </div>
+
+    <p>This will return you to the command line prompt.</p>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> In this lab you learned:</p>
+
+<ul>
+  <li>How to create a multi-model LoopBack application</li>
+  <li>How to create a Representational State Transfer (REST) API definition using IBM Connect API Designer</li>
+  <li>How to create a Representational State Transfer (REST) API definition using IBM Connect Command Line</li>
+  <li>How to use the LoopBack Cloudant Connector</li>
+  <li>How to test a REST API</li>
+  <li>How to create relationships between models</li>
+</ul>
+
+<p>Lab 3 will build on what you have already created to enable processing hooks and publish the APIs to the API Manager.</p>
+
+<p>Proceed to <a href="lab3.html">Lab 3 - Customize and Deploy an Application</a></p>
+
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

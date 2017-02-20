@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 3
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Lab 1 - Customising the API Connect Developer Portal | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="../../css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="../../css/modern-business.css">
+<link rel="stylesheet" href="../../css/lavish-bootstrap.css">
+<link rel="stylesheet" href="../../css/theme-blue.css">
+<link rel="stylesheet" href="../../css/customstyles.css">
+<link rel="stylesheet" href="../../css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="../../css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="../../js/toc.js"></script>
+<script src="../../js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="../../images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="../../index.html">
+              <img src="../../images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 1 - Customising the API Connect Developer Portal</h1>
+</div>
+
+<div class="post-content">
+
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+<p>The developer portal section of this lab is split into 3 parts, which must be followed in order since each part builds upon the previous part. From a high level, the 3 parts are:</p>
+
+<ol>
+  <li>Set up API Connect (lab 0 in the PoT)</li>
+  <li>Perform the basic developer portal customisation lab (Part 1.1 in this lab)</li>
+  <li>Perform the advanced developer portal customisation lab (Part 1.2 in this lab)</li>
+</ol>
+
+<h2 id="before-you-begin">Before you begin</h2>
+<p>Lab 0 - Setup IBM API Connect must be completed before this lab can be performed.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="basic-developer-portal-customisation"><strong>1.1	- Basic Developer Portal Customisation</strong></h3>
+
+<p>In this section, you will leverage a custom prebuilt theme. A theme file is packaged as a zip file that contains a set of predefined files. The theme zip file is what is loaded into the developer portal. The best method for creating a custom theme is to obtain an existing custom theme, rename it and change the files as explained in the table below to meet your customization needs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">overrides.css</code></td>
+      <td>This style sheet overrides the fonts, colors and other defaults from the inherited base IBM API Connect theme. The name of this css file is specified in the theme.info file.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">screenshot.png</code></td>
+      <td>The file contains a screenshot of the home page for the custom theme and is used in the appearance settings so you can easily find the theme you want to enable and set as the default theme. When you are finishing completing the edits to the overrides.css and have set up the welcome banner to your satisfaction, you should take a screen shot of the developer portal home page and capture it with Snagit or some other screen capture tool and place the file in the top level directory of the theme file. The name of this screenshot file is specified in the theme.info file.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">templete.php</code></td>
+      <td>The template.php file contains your sub-theme’s functions to manipulate Drupal’s default markup. It is one of the most useful files when creating or modifying Drupal themes. With this file you can modify any theme hooks variables or add your own variables, using preprocess or process functions. Override any theme function: that is, replace a module’s default theme function with one you write. Call hook alter functions, which allow you to alter various parts of Drupal’s internals, including the render elements in forms. See <a href="http://api.drupal.org">http://api.drupal.org</a> for more information about these functions.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">thinkibm_connect_theme.info</code></td>
+      <td>The .info file is a static text file for defining and configuring a theme. Each line in the.info file is a key-value pair with the key on the left and the value on the right, with an “equals sign” between them (e.g. name = my_theme). The info file naming conventions needs to have the theme name specified as part of the filename. The project key in the .info file contains the name of the theme.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">theme-settings.php</code></td>
+      <td>Drupal themes get a number of configurable settings options for free. For example, most provide toggle switches for the search box, site slogans, user pictures, and so on. Similarly, most provide file uploading widgets to add a custom logo or favicon. These settings are easy: Drupal will add them to the theme’s configuration page by default, so it takes no extra work. We want to create our own custom setting, however; one that adds a hidden field that contains the current release information to the Theme configuration form. To do that, we’ll need to add a new file to the theme: <code class="highlighter-rouge">theme-settings.php</code>. The function name specified within this file needs to be prefixed with the theme name: <code class="highlighter-rouge">thinkibm_connect_theme</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">thinkibm_welcome_banner.png</code></td>
+      <td>This file provides the image that shows up in the welcome banner. Although the welcome banner does not need to be part of the theme zip file contents, it is useful to place the welcome banner with other theme files.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">favicon.ico</code></td>
+      <td>In web development, you can provide a small logo for your site that appears near the address bar and in the bookmarks folder in a visitor’s browser. This logo is called the favicon. Drupal provides a default one, which is the recognizable water drop logo. Using the Drupal logo as the favicon is fine but if you really want to make your site stand out, you should provide your own. Favicon files are in the .ico format and are extremely small in dimensions. The default Drupal favicon is 32 pixels high by 32 pixels wide, many browsers use a 16 x 16 pixel version that can be included in the same file. This is because the favicon is only an icon that shows up in the address bar and favorites (bookmarks) list and typically there is not a lot of room there. Any favicon that you create should be just as small.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">logo.png</code></td>
+      <td>The default logo that appears at the top left-hand side of the developer portal page.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="install-and-configure-a-custom-theme"><strong>1.1.1 - Install and Configure a Custom Theme</strong></h4>
+
+<p>Now that we have explained the contents of a custom theme file, it is time to load the custom theme.</p>
+
+<ol>
+  <li>
+    <p>Return to the Bluemix API Manager screen.</p>
+
+    <p>Navigate to the Dashboard section and click on the <code class="highlighter-rouge">Sandbox</code> catalog tile.</p>
+
+    <p>Choose the <code class="highlighter-rouge">Settings</code> tab, followed by the <code class="highlighter-rouge">Portal</code> option.</p>
+
+    <p>Click on the <code class="highlighter-rouge">Portal URL</code> link to launch the Developer Portal.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/launch-portal.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Login into the developer portal as an administrator using a username of <code class="highlighter-rouge">admin</code> and the password you set up in Lab 1.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/PortalAdminLogin.png" alt="" /></p>
+  </li>
+  <li>
+    <p>From the Administrator menu, select <code class="highlighter-rouge">Appearance</code> and then <code class="highlighter-rouge">Install new theme</code>.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/InstallNewPortalTheme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>In the <code class="highlighter-rouge">Install from a URL</code> field, enter the following URL then click the <code class="highlighter-rouge">Install</code> button:</p>
+
+    <p><a href="https://ibm-apiconnect.github.io/faststart/assets/lab7/portal-theme.zip">https://ibm-apiconnect.github.io/faststart/assets/lab7/portal-theme.zip</a></p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/install-theme.png" alt="" /></p>
+
+    <div class="alert alert-warning" role="alert">
+      <p><i class="fa fa-warning"></i> <b>Important:</b> <br />If the ‘Install from a URL’ does returns an error, please download the zip file for the theme to your local computer.  Use the ‘Upload a module or theme archive to install’ to upload the zip file for the theme.</p>
+    </div>
+  </li>
+  <li>
+    <p>Once the installation of the custom theme completes, click the <code class="highlighter-rouge">Enable newly added themes</code> link.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/enable-theme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down the list of themes to find the <code class="highlighter-rouge">thinkibm_connect 7.53</code> theme.</p>
+
+    <p>Click the <code class="highlighter-rouge">Enable and set default link</code> link.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/set-default-theme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Home</code> icon in the top-left corner of the screen to return to the home page.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/CloseThemeSettings.png" alt="" /></p>
+  </li>
+  <li>
+    <p>After returning to the Home Page of your Developer Portal, it should look like the image below.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/theme-uploaded-final-2.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="customize-the-welcome-banner"><strong>1.1.2 - Customize the Welcome Banner</strong></h4>
+
+<p>Now we want to change the default Welcome banner to use our custom Welcome banner image.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the blocks content page by selecting <code class="highlighter-rouge">Content &gt; Blocks</code> from the admin menu.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/ThinkIBMBlocks.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Underneath operations select <code class="highlighter-rouge">Edit</code> to the right of the Welcome banner block.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/edit-welcome-banner.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Before you can set the image, you will need to download it to your local computer’s disc drive. You can download the file from this URL:</p>
+
+    <p><a href="https://thinkibm-services.mybluemix.net/portal/welcome-banner.png">https://thinkibm-services.mybluemix.net/portal/welcome-banner.png</a></p>
+  </li>
+  <li>
+    <p>Scroll down the banner edit page, locate the <em>Image</em> section and click the <code class="highlighter-rouge">Chose file</code> button to launch the file explorer.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/choose-banner-file.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Find the <code class="highlighter-rouge">welcome-banner.png</code> file. Then, click the <code class="highlighter-rouge">Open</code> button.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Upload</code> button to upload the new welcome banner image.</p>
+  </li>
+  <li>
+    <p>Scroll to the bottom of the page and click the <code class="highlighter-rouge">Save</code> button.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">x</code> button to close the content block settings.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/close-content-block.png" alt="" /></p>
+  </li>
+  <li>
+    <p>After returning to the Home Page of your Developer Portal, it should look like the image below.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/final-112-step9.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="change-the-region-settings-for-the-content-blocks"><strong>1.1.3 - Change the Region Settings for the Content Blocks</strong></h4>
+
+<p>The region settings for some of the content blocks were reset when we loaded the new theme, so we will set these back.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the region settings for block content page by selecting <code class="highlighter-rouge">Structure &gt; Blocks</code> from the admin menu.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/ThinkIBMBlockRegionSettings.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Locate the <strong>Sidebar first</strong> block. You will see entries for <code class="highlighter-rouge">Navigation</code>, <code class="highlighter-rouge">Support</code> and <code class="highlighter-rouge">User login</code>.</p>
+  </li>
+  <li>
+    <p>For <strong>both</strong> the <code class="highlighter-rouge">Navigation</code> and <code class="highlighter-rouge">User Login</code> entries, select <code class="highlighter-rouge">- None -</code> from the drop down menu.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/SetBlockRegionstoNone.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The only entry left in the section should be <code class="highlighter-rouge">Support</code>.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/sidebar-first-complete.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the bottom of the screen anc click the <code class="highlighter-rouge">Save Blocks</code> button.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/SaveBlockRegions.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll back to the top and click the <code class="highlighter-rouge">x</code> button to close the block region settings.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/close-region-block.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You are finished with customizing the developer portal. There is a lot more that can be customized than what we have time for in this lab.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/lab7/PortalAdminLogout.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="advanced-developer-portal-customisation"><strong>1.2	- Advanced Developer Portal Customisation</strong></h3>
+
+<h3 id="adding-the-slogan"><strong>Adding the Slogan</strong></h3>
+<ol>
+  <li>Click Configuration &gt; System &gt; Site Information</li>
+  <li>
+    <p>In the ‘Slogan’ field enter: ‘Welcome to the API Portal’</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/1.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save the configuration</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/2.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Close the current window</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/3.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click Appearance &gt; Settings</p>
+  </li>
+  <li>
+    <p>Navigate to the thinkibm_connect theme settings</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/4.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Expand the Toggle display section and check the box for ‘Site Slogan’</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/5.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save the configuration</p>
+  </li>
+  <li>You will notice that you will not be able to see any changes. This is because the color scheme of the slogan is set to white text on the white background.</li>
+</ol>
+
+<h3 id="colour-schemes-and-custom-css"><strong>Colour Schemes and Custom CSS</strong></h3>
+<p>Here we are going to add custom CSS to our theme. For this we are going to use the ‘Custom CSS’ extension in the developer portal. Note the ‘Custom CSS’ extension is designed to make small CSS changes in the case of emergencies in production. However, the ‘Custom CSS’ extension is also useful to quickly make CSS changes at development time when you are building the look and feel of a developer portal. It saves the need to re-upload the theme every time a new CSS change is made throughout development. Once you are happy with the CSS and it is stable, it should be moved from the ‘Custom CSS’ extension and placed inside the overrides.css file inside the theme itself.</p>
+
+<ol>
+  <li>
+    <p>To activate the ‘Custom CSS’ extension go to Appearance &gt; Setting &gt; thinkibm_connect &gt; Extensions &gt; Check box ‘Custom CSS’.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/6.png" alt="" /></p>
+  </li>
+  <li>Save the changes by clicking ‘Save Configuration’ at the bottom of the page.</li>
+  <li>Now if you go to Appearance &gt; Setting &gt; thinkibm_connect then scroll down to the menu at the bottom (extensions), there will be a new menu tab called ‘Custom CSS’. In here, any custom CSS declarations can be set.</li>
+  <li>
+    <p>Inside the custom CSS editor area, copy the flowing 2 CSS declarations:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>     /*  CSS for changing the site slogan: */
+        h2#site-slogan {
+          padding-top: 1.9em;
+          font-size: 2em !important;
+          color: #444849;
+
+        }
+        /* CSS for changing the logo padding: */
+        img.site-logo {
+          height: 95px;
+          padding-top: 14px;
+        }
+	
+    /* Adjusts the menu bar: */
+    #page
+    {
+       padding-top: 100px;
+    }
+</code></pre>
+    </div>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/7.png" alt="" /></p>
+  </li>
+  <li>Now scroll to the bottom of the page and hit ‘Save Configuration’.</li>
+  <li>
+    <p>Scroll to the top and hit the X to close the Appearance menu and view the changes you have made.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/8.png" alt="" /></p>
+  </li>
+  <li>
+    <p>After returning to the Home Page of your Developer Portal, it should look like the image below.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/theme-uploaded-final.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="custom-footer-block"><strong>Custom Footer Block</strong></h3>
+<ol>
+  <li>Click ‘Structure’ &gt; ‘Blocks’</li>
+  <li>
+    <p>Click configure on the ‘Developer portal footer’ block</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/9.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Open the wysiwyg (button with html on it) editor and paste in the contents below.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  &lt;div class="footer_wrapper_div"&gt;&lt;div class="upper_grey_block"&gt;&lt;div class="table_div_left" style="text-align:    center;"&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div class="lower_grey_block"&gt;&lt;div class="centered_link" style="text-align: center;"&gt;&lt;a&gt;Terms of use |&lt;/a&gt;&amp;nbsp;&lt;a&gt;Terms &amp;amp; Conditions&lt;/a&gt;&amp;nbsp; |&amp;nbsp;&lt;a&gt;Privacy Policy&lt;/a&gt;&amp;nbsp; |&amp;nbsp;&lt;a&gt;Cookies&lt;/a&gt;&amp;nbsp;&lt;a&gt;Accessibility&lt;/a&gt;&amp;nbsp; |&amp;nbsp;&lt;a&gt;Sitemap&lt;/a&gt;&lt;/div&gt;&lt;div class="list_div_left"&gt;&amp;nbsp;&lt;/div&gt;&lt;div class="list_div_left" style="text-align: center;"&gt;&lt;a&gt;&lt;/a&gt;© IBM 2016. All Rights Reserved&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/10.png" alt="" /></p>
+  </li>
+  <li>Click Update</li>
+  <li>
+    <p>Select ‘Full HTML’ from the ‘Text Format’ drop down</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/11.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save the block from the footer of the page</p>
+  </li>
+  <li>
+    <p>Close the window and view the changes made to the footer.</p>
+  </li>
+  <li>
+    <p>The footer should look like the image below.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/customfooter-uploaded-final.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="adding-a-custom-block-to-the-home-page"><strong>Adding a Custom Block to the Home Page</strong></h3>
+<ol>
+  <li>Click Structure &gt; Pages</li>
+  <li>Click ‘edit’ on the ‘page-welcome’ page (towards the bottom of the list)</li>
+  <li>
+    <p>Click ‘content’</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/12.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Using the cog on ‘Middle (conditional)’ select ‘Add content’.</p>
+  </li>
+  <li>
+    <p>Click Custom Blocks.</p>
+  </li>
+  <li>Click on ‘New Custom Content’ and set:
+    <ul>
+      <li>Administrative Title: Homepage block 1</li>
+      <li>Title: leave blank</li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the html button and add in the following html to the body</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="light_grey_homepage_block"&gt;&lt;div class="left_side_50_div"&gt;&lt;div class="fixed_width_block_div"&gt;&lt;h3 class="block_heading_2 align_text_center" style="text-align: center;"&gt;&lt;span style="color: #444849;"&gt;Create a seamless experience with direct access to our services and intergrate them with your business&lt;/span&gt;&lt;/h3&gt;&lt;h3 class="block_heading_2 align_text_center" style="text-align: center;"&gt;&lt;span style="color: #444849;"&gt;Look through our API products to find the right one for your business. There's dedicated documentaion on hand for you to get started.&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;&lt;h3 class="block_heading_2 align_text_center" style="text-align: center;"&gt;&lt;span style="color: #444849;"&gt;If you have any questions about how to get started or need help with your existing intergration, take a look in our support section.&lt;/span&gt;&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/13.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click update on the html source editor</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/14.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click finish.</p>
+  </li>
+  <li>
+    <p>Drag the Homepage block 1 that you just created to the top of the middle section (above the features_apis_title block). This will position this new section on the page underneath the welcome banner.</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/15.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click ‘Update and Save’.</p>
+  </li>
+  <li>
+    <p>Close the welcome screen admin menu to see the results on the home page of the Portal. Refer to the image below</p>
+
+    <p><img src="https://ibm-apiconnect.github.io/faststart/images/europe2017/lab1/customblock-uploaded-final.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="remove-text-on-the-banner-image"><strong>Remove text on the Banner Image</strong></h3>
+<ol>
+  <li>Click ‘Content’ &gt; ‘Blocks’.</li>
+  <li>On the ‘Welcome banner’ click edit.</li>
+  <li>Click on the html button and edit the html source to remove the text in the HTML which read ‘Innovate with our APIs’.</li>
+  <li>Click update in the HTML source editor.</li>
+  <li>Scroll down and save the configuration.</li>
+  <li>Close the content editor to see the results on the home page</li>
+</ol>
+
+<div class="alert alert-info" role="alert">
+  <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />If you are finding the text is not disappearing from the banner, it may be due to another language other than English is set as default. Try repeating this section but go into the translations of the block and remove the HTML from the English version of the block specifically.</p>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> You have customised your first Developer Portal!</p>
+
+<p>Proceed to <a href="/faststart/europe/2017/lab2.html">Lab 2 - Protecting a Payments API using oAuth 2.0</a></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

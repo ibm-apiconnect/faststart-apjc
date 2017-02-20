@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you will gain a high level understanding of how analytics are used to visualize the information captured by the gateway node. You can filter, so...">
+<meta name="keywords" content=" ">
+<title>Lab 8 - Analytics in API Connect | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 8 - Analytics in API Connect</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you will gain a high level understanding of how analytics are used to visualize the information captured by the gateway node. You can filter, sort and aggregate your API event data; then present the results within correlated charts, tables and maps to help you manage service levels, set quotas, establish controls, set up security policies, manage communities and analyze trends. API Analytics is built on the Kibana V4.3 open source analytics and visualization platform, which is designed to work with the Elastic Search real-time distributed search and analytics engine.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In this lab, you will learn:</p>
+
+<ul>
+  <li>How to view the analytics for a catalog inside of API Manager</li>
+  <li>How to create a custom dashboard</li>
+  <li>How to add visualizations to a dashboard</li>
+  <li>How to customize and arrange visualizations in the dashboard</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p>In this tutorial, you will simulate a good amount of traffic passing through the API Connect platform by executing a script that will invoke a series of <code class="highlighter-rouge">curl</code> commands that will hit a dummy API. Upon that script finishing, you will go into the API Manager and get some hands on experience with customizing a dashboard and viewing the analytics for traffic run on the system.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="browse-the-analytics-data-in-api-connect">8.1 - Browse the Analytics Data in API Connect</h3>
+
+<ol>
+  <li>
+    <p>If not already open, launch the <code class="highlighter-rouge">Firefox Web Browser</code> from the favorites menu.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">API Manager</code> bookmark.</p>
+  </li>
+  <li>
+    <p>Log in to the <code class="highlighter-rouge">API Manager</code> server with the following credentials:</p>
+
+    <blockquote>
+      <p>Username: <code class="highlighter-rouge">student@think.ibm</code></p>
+
+      <p>Password: <code class="highlighter-rouge">Passw0rd!</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Sandbox</code> catalog tile:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/api-mgr-dashboard-sandbox-tile.png" alt="" /></p>
+  </li>
+  <li>
+    <p>From the <code class="highlighter-rouge">Sandbox</code> catalog configuration screen, click on the <code class="highlighter-rouge">Analytics</code> tab:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-tab.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The default dashboard gives some general information like the 5 most active Products and 5 most active APIs.  This information is interesting, but we can see much more information by customizing the dashboard. Add a new visualization by clicking on the <code class="highlighter-rouge">+ Add Visualization</code> icon:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-add-visualization.png" alt="" /></p>
+  </li>
+  <li>
+    <p>This will bring a list of some of the standard visualizations. You can then type in a string to filter through visualizations or use the arrows to page through the list.</p>
+  </li>
+  <li>
+    <p>Add the <code class="highlighter-rouge">API Calls</code> visualization to the dashboard by simply clicking on it. The new visualization will be added to the bottom of our dashboard.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/image21.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to find the new visualization. You can adjust the size by clicking and dragging the border from the lower right. Additionally, you can adjust its position by clicking and dragging the box to where you want it.</p>
+
+    <p>Move the <code class="highlighter-rouge">API Calls</code> box in between the 5 Most Active Products and 5 Most Active API windows.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/image22.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Feel free to play around with the other visualizations by adding them to the Dashboard. You can also save the dashboard by clicking on the <code class="highlighter-rouge">Save Dashboard</code> button:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-save-dashboard.png" alt="" /></p>
+  </li>
+  <li>
+    <p>There are also several out of the box Dashboards that you can play with by clicking on the <code class="highlighter-rouge">Load Saved Dashboard</code> icon. Go ahead and open the <code class="highlighter-rouge">api default</code> Dashboard.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-load-dashboard.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Here you will see some interesting visualizations that show graphs and charts with information about the API Traffic that was processed.</p>
+  </li>
+  <li>
+    <p>Analytics data can be filtered over different time periods, and the widgets can even be automatically refreshed. Click on the calendar icon which specifies the default time period of <code class="highlighter-rouge">Last 7 days</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-calendar.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on <code class="highlighter-rouge">Auto Refresh</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-auto-refresh.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Set the refresh period to <code class="highlighter-rouge">5 seconds</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab8/analytics-refresh-5sec.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Return to the consumer application in the Chrome web browser. Navigate around the site and test out some of the features in order to generate some additional API calls.</p>
+  </li>
+  <li>
+    <p>Return back to the analytics view and notice how the data is refreshed automatically.</p>
+  </li>
+</ol>
+
+<h2 id="completion">Completion</h2>
+
+<p><strong>Congratulations!</strong> You have completed all of the labs!</p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

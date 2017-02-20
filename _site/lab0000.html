@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you’ll start from scratch to install Node.js and the components of the API Connect Developer toolkit.  Once you have the toolkit installed, you’...">
+<meta name="keywords" content=" ">
+<title>Lab 0 - Setup IBM API Connect | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 0 - Setup IBM API Connect</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you’ll start from scratch to install Node.js and the components of the API Connect Developer toolkit.  Once you have the toolkit installed, you’ll get a chance to use the APIC command line interface for creating LoopBack applications, the intuitive Web-based user interface, and explore the various aspects associated with solution’s configuration of RESTful based services as well as their operation.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to install Node.js on to your machine</li>
+  <li>How to enable API Connect on your Bluemix account</li>
+  <li>How to install the APIC Developer Toolkit</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study used in this tutorial</h2>
+<p>In this tutorial, you will be starting from scratch to set up your development environment on your local machine.</p>
+
+<h2 id="before-you-begin">Before you begin</h2>
+<p>For this lab, you will be starting with your local image and installing node.js and the developer toolkit.  After that, if you do not already have a Bluemix account, you will be creating one for you and enabling the API Connect Essentials service on your account. The instructions you will follow will vary by the host operating system you are using. The three host OS’s supported by this are <code class="highlighter-rouge">Windows</code>, <code class="highlighter-rouge">Linux - Intel</code> and <code class="highlighter-rouge">Linux - Mac</code>.  Skip to the section for your appropriate operating system.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="install-nodejs">0.1 - Install Node.js</h3>
+
+<h4 id="a---windows">0.1a - Windows</h4>
+
+<ol>
+  <li>
+    <p>If you don’t have node already installed on your machine, then please proceed.  Otherwise, move on to section 0.2 (Setup your Bluemix account).</p>
+  </li>
+  <li>
+    <p>Installing Node on Windows based machines (Tested on Windows 7 and Windows 10):</p>
+  </li>
+  <li>
+    <p>The following are pre-requisites that need to be installed before installing node:</p>
+
+    <ol>
+      <li>
+        <p>Install Python</p>
+
+        <ol>
+          <li>
+            <p>version 2.7 is required. You can download it here:</p>
+
+            <p><a href="https://www.python.org/download/releases/2.7/">https://www.python.org/download/releases/2.7/</a></p>
+          </li>
+          <li>
+            <p>Note the location where it is installed.  You will need to add this location to your path later on.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>Install .Net Frameworks SDK 2.0</p>
+
+        <p><a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=19988">https://www.microsoft.com/en-us/download/confirmation.aspx?id=19988</a></p>
+      </li>
+      <li>
+        <p>Install Visual Studio Express</p>
+
+        <p><a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=44914">https://www.microsoft.com/en-us/download/confirmation.aspx?id=44914</a></p>
+      </li>
+      <li>
+        <p>Add Python to the System Path in Windows 7 to the System Path.</p>
+
+        <ol>
+          <li>
+            <p>Go to <code class="highlighter-rouge">Control Panel</code> -&gt; <code class="highlighter-rouge">System</code> -&gt; <code class="highlighter-rouge">Advanced System Settings</code></p>
+
+            <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/1.png" alt="" /></p>
+          </li>
+          <li>
+            <p>Click <code class="highlighter-rouge">Environment Variables</code>.</p>
+
+            <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/2.png" alt="" /></p>
+          </li>
+          <li>
+            <p>Click <code class="highlighter-rouge">Edit</code> and append <code class="highlighter-rouge">;C:\python27</code> (or wherever you installed python) to the Path variable.</p>
+
+            <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/3.png" alt="" /></p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Install Node.js</p>
+
+    <ol>
+      <li>
+        <p>Go to this link to install Node:</p>
+
+        <p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+      </li>
+      <li>
+        <p>Select the “LTS version - Recommended for most users”.  Version at the top should depict v4.5 - includes npm 2.15.9.</p>
+
+        <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/4.png" alt="" /></p>
+      </li>
+      <li>
+        <p>Select the Windows Installer .msi binary and then follow the prompts to install on your machine.</p>
+      </li>
+      <li>
+        <p>Before moving on, You will need to update your version of <code class="highlighter-rouge">npm</code> to version <code class="highlighter-rouge">3.8.10</code></p>
+      </li>
+      <li>
+        <p>To do so, perform the following steps:</p>
+      </li>
+      <li>
+        <p>Click on <code class="highlighter-rouge">Start</code> and then in the search window type in <code class="highlighter-rouge">Powershell</code>.  Right click on <code class="highlighter-rouge">Windows PowerShell</code> and then select <code class="highlighter-rouge">Run as Administrator</code></p>
+
+        <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/4a.png" alt="" /></p>
+      </li>
+      <li>
+        <p>Execute these commands in Powershell</p>
+
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+npm install -g npm-windows-upgrade
+npm-windows-upgrade
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>Select the <code class="highlighter-rouge">3.10.8</code> version of npm.  This is the recommended version to run with. Close the Powershell.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Install API Connect on to your machine by starting up a command line window as Administrator and issue this command:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install -g apiconnect --no-optional --ignore-scripts
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Once complete start up a new terminal window and enter in <code class="highlighter-rouge">apic -v</code>.</p>
+
+    <p>If it returns the version of the platform, and not an error message, then the toolkit should then be properly installed.</p>
+  </li>
+  <li>
+    <p>You are now ready to move on to section 0.2.</p>
+  </li>
+</ol>
+
+<h4 id="b---linux">0.1b - Linux</h4>
+
+<ol>
+  <li>
+    <p>Install the essentials to run node.js:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install build-essential libssl-dev curl git-core
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Install Node Version Manager aka “nvm” by issuing this command here:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+</code></pre>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    When you install <code class="highlighter-rouge">nvm</code> it will also install <code class="highlighter-rouge">npm</code> which is the node package manager used to install node.js based software modules, including the API Connect Developer Toolkit.</p>
+    </div>
+  </li>
+  <li>
+    <p>Close and restart your terminal as indicated in the terminal window or run this command <code class="highlighter-rouge">source ~/.profile</code>.</p>
+  </li>
+  <li>
+    <p>Run this command to confirm your version <code class="highlighter-rouge">nvm --version</code></p>
+  </li>
+  <li>
+    <p>This command will provide documentation on nvm if you wish to learn more about it <code class="highlighter-rouge">nvm help</code>.  NVM is exceptionally useful as it will allow you to support multiple installations of node.js on your machine, and select the version you want to use.  For our lab today, we only need the one version as indicated in the steps below.</p>
+  </li>
+  <li>
+    <p>To check and see which versions of node are available, issue this command <code class="highlighter-rouge">nvm ls-remote</code>.  It will provide a very long list.  For API Connect, we will use a specific version of node.  That is version 4.5.0</p>
+  </li>
+  <li>
+    <p>To install node 4.5.0 issue this command <code class="highlighter-rouge">nvm install 4.5.0</code></p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">student@ubuntu:~$ </span>nvm install 4.5.0
+Downloading https://nodejs.org/dist/v4.4.7/node-v4.5.0-linux-x64.tar.xz...
+Now using node v4.5.0 <span class="o">(</span>npm v2.15.9<span class="o">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Install API Connect by issuing this command:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install -g apiconnect
+</code></pre>
+    </div>
+
+    <p>It will take several minutes to complete.</p>
+  </li>
+  <li>
+    <p>Once complete start up a new terminal window and enter in <code class="highlighter-rouge">apic -v</code>.</p>
+
+    <p>If it returns the version of the platform, and not an error message, then the toolkit should then be properly installed.</p>
+  </li>
+  <li>
+    <p>You are now ready to move on to section 0.2.</p>
+  </li>
+</ol>
+
+<h4 id="c---mac-os">0.1c - Mac OS</h4>
+
+<ol>
+  <li>
+    <p>Check to see if node is already installed.</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>node -v
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Check the version, if it is version 4.5.0 then you can move on to section 1.1 - Create your Bluemix account. However if you would prefer to uninstall and reinstall node using Node Version Manager or if node was not found then please continue.</p>
+  </li>
+  <li>
+    <p>Remove any existing versions of node. You will only need to complete these steps if node currently exists. To remove node completely from your Mac OSX environment run each of the following commands. Open a terminal session and type each of the commands below individually.</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo rm /usr/local/bin/npm
+sudo rm /usr/local/share/man/man1/node.1
+sudo rm /usr/local/lib/dtrace/node.d
+sudo rm -rf ~/.npm
+sudo rm -rf ~/.node-gyp
+sudo rm /opt/local/bin/node
+sudo rm /opt/local/include/node
+sudo rm -rf /opt/local/lib/node_modules
+sudo rm -rf /usr/local/include/node/
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Install Xcode Command Line Tools. Open a terminal and type</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>xcode-select --install
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>This will open a dialog informing you that the command line developer tools are required for install. Press the Install button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-xcode-tools-confirm-install.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Agree to the license</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-xcode-tools-confirm-license.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The software install will begin</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-xcode-tools-progress.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The install is complete when you see the “The software was installed” message.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-xcode-tools-install-complete.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Next install git. You may already have a version, but if you want to have the latest version you will need to download the install from https://git-scm.com/download/mac</p>
+  </li>
+  <li>
+    <p>Once on the install page the download should start immediately. However if it does not start immediately, click the “click here to download manually” link.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-git-install-download.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once the download has completed, you should have a file named similar to git-2.8.1-intel-universal-mavericks.dmg. Double-click to unpack the disk image.</p>
+  </li>
+  <li>
+    <p>Once the disk image is unpacked and open, double-click the git-2.8.1-intel-universal-mavericks.pkg file. Note that if you downloaded a different version the file name will be reflected accordingly.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-git-install-package.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You may get a dialog box with a message stating that the file can’t be opened because it is from an unidentified developer. Click the OK button. Open your System Preferences and select the Security &amp; Privacy component. In the section called “Allow apps downloaded from:” you will notice a message that states ‘“git-2.8.1-..ericks.pkg” was blocked from opening because it is not from an identified developer.’, press the Open Anyway button. This will open the installer for git.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-git-install-unsecure.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-git-install-security.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-git-install-start.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Follow the wizard to install. The installation is complete when you see a message stating that the installation was successful.</p>
+  </li>
+  <li>
+    <p>Install Node Version Manager aka “nvm” by opening a terminal session and typing the following commands:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone git://github.com/creationix/nvm.git ~/.nvm
+<span class="nb">printf</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># NVM</span><span class="se">\n</span><span class="s2">if [ -s ~/.nvm/nvm.sh ]; then</span><span class="se">\n\t</span><span class="s2">NVM_DIR=~/.nvm</span><span class="se">\n\t</span><span class="s2">source ~/.nvm/nvm.sh</span><span class="se">\n</span><span class="s2">fi"</span> &gt;&gt; ~/.bashrc
+<span class="nv">NVM_DIR</span><span class="o">=</span>~/.nvm
+<span class="nb">source</span> ~/.nvm/nvm.sh
+nvm install 4.5.0
+nvm <span class="nb">alias </span>default node
+nvm use node
+</code></pre>
+    </div>
+
+    <blockquote>
+      <p><strong>Note:</strong> You may want to update your .bash file so you do not have to source the shell script every time. To do that, add the following to your .profile located in your user home directory:</p>
+
+      <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">NVM_PATH</span><span class="o">=</span>~/.nvm
+<span class="nb">source</span> ~/.nvm/nvm.sh
+</code></pre>
+      </div>
+    </blockquote>
+  </li>
+  <li>
+    <p>Install API Connect by issuing the following command:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install -g apiconnect
+</code></pre>
+    </div>
+
+    <p>It will take several minutes to complete.</p>
+  </li>
+  <li>
+    <p>Once complete start up a new terminal window and enter in <code class="highlighter-rouge">apic -v</code>.</p>
+
+    <p>If it returns the version of the platform, and not an error message, then the toolkit should then be properly installed.</p>
+  </li>
+  <li>
+    <p>You are now ready to move on to section 0.2.</p>
+  </li>
+</ol>
+
+<h3 id="create-your-bluemix-account">0.2 - Create your Bluemix account</h3>
+
+<ol>
+  <li>
+    <p>Open a browser and visit:</p>
+
+    <p><a href="http://www.bluemix.net">http://www.bluemix.net</a></p>
+  </li>
+  <li>
+    <p>Press the SIGN UP button</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Complete the form and press the CREATE ACCOUNT button</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-account-details.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Check your email for your next steps.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-confirmation-email.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Open the email and click the Confirm your account link.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-confirmation-email-detail.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once confirmed, you will be taken to a page that says Success! To login, click the Log In link</p>
+  </li>
+  <li>
+    <p>Enter your email address and press the CONTINUE button</p>
+  </li>
+  <li>
+    <p>Then enter your password on the next page and press the LOG IN button</p>
+  </li>
+  <li>
+    <p>Once you are logged in, you can start your 30 day trial by clicking on the launch button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-launch-trial.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You will be prompted to create an organization. Enter an organization name (notice that there are suggestions for you). Also select an appropriate region. Then press the CREATE button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-create-org.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Next you will be prompted to create a space such as dev, test, prod, etc. You can name it whatever you would like (again notice the recommendations). Then press the CREATE button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-create-space.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Next you will see the Summary page where you can review your entries. Press the I’m Ready button</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-summary.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You will see a screen then that  Click the <code class="highlighter-rouge">Catalog</code> button to go to your catalog and create your API Connect instance in section 0.3 below.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-complete.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="enable-the-api-connect-service-on-your-bluemix-account">0.3 - Enable the API Connect Service on your Bluemix Account</h3>
+
+<ol>
+  <li>
+    <p>Once in the catalog, you can search for the API Connect service by entering in <code class="highlighter-rouge">API Connect</code> in the search box next to the magnifying glass icon.  Click on the <code class="highlighter-rouge">API Connect</code> Icon to install a new instance of API Connect into your Bluemix space.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/28.png" alt="" /></p>
+  </li>
+  <li>You can read through some of the details about the service.  You can fill in the information based on your needs.
+    <ul>
+      <li>SPACE – The name of your Bluemix Space to deploy the API Connect Service</li>
+      <li>APP – Keep the default “Leave unbound”</li>
+      <li>Service Name – The name you want to give to your API Connect implementation if required</li>
+      <li>Selected Plan – Keep the default  Once you are ready to continue, Click the <code class="highlighter-rouge">Create</code> button.</li>
+    </ul>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/29.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The API Connect service is now deployed.  Return to your Dashboard and you will see that your API Connect service is there.  Click on it open.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/33.png" alt="" /></p>
+  </li>
+  <li>
+    <p>It will log into your instance for you automatically.  Once finished, it should drop you in your Drafts window.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/34.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the Navigate button in the upper left corner and select <code class="highlighter-rouge">Dashboard</code>.  If you see your <code class="highlighter-rouge">Sandbox</code> catalog there, then the process to create your instance is complete.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/34a.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="create-your-developer-portal-instance-for-your-api-connect-catalog">0.4 Create your Developer Portal Instance for your API Connect Catalog</h3>
+
+<ol>
+  <li>
+    <p>Open a new tab in your web browser by clicking on the new tab <code class="highlighter-rouge">+</code> button.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot-bluemix-docs/raw/master/img/lab1/new-tab.png" alt="" /></p>
+  </li>
+  <li>Log into your Bluemix Account using this url: <a href="">https://new-console.ng.bluemix.net/</a></li>
+  <li>
+    <p>Via the dashboard, click on your API Connect instance.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/33.png" alt="" /></p>
+  </li>
+  <li>
+    <p>From the top left, go to the <code class="highlighter-rouge">Dashboard</code> to bring your list of catalogs.  Click on your <code class="highlighter-rouge">Sandbox</code> Catalog</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot-bluemix-docs/raw/master/img/lab1/19.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on <code class="highlighter-rouge">Settings</code></p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot-bluemix-docs/raw/master/img/lab1/20.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Here you will see that you have no developer portal set up.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot-bluemix-docs/raw/master/img/lab1/21.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">IBM Developer Portal</code> Radio Button to create your own custom portal that is tied to your catalog and then click <code class="highlighter-rouge">Save</code>. It will automatically generate the portal URL and the portal as well.</p>
+
+    <p><img src="http://github.com/ibm-apiconnect/pot-bluemix-docs/raw/master/img/lab1/22.png" alt="" /></p>
+  </li>
+  <li>
+    <p>A pop up screen will let you know that the process to create your portal has started.</p>
+  </li>
+  <li>
+    <p>It might take some time for your developer portal to get created, but usually the process is pretty quick.  If this piece doesn’t work for you right away, move on to the next lab and circle back to this lab in a bit.  Once the portal is done creating, you will receive an email.  If it still doesn’t work by the time you get to the later labs, inform your instructor.</p>
+  </li>
+  <li>Once the process is complete, click on the link of the portal URL as seen in the screenshot above in step #9.  It is highly suggested that you create a bookmark for your developer portal in your browser so you can get back to it easily later.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> You have installed node.js, the API Connect developer toolkit!</p>
+
+<p>In this lab you learned:</p>
+
+<ul>
+  <li>How to install node.js and its prerequisites and the API Connect Developer Toolkit on your native OS.</li>
+  <li>Set up you Bluemix Account.</li>
+</ul>
+
+<p><strong>Options:</strong> Either</p>
+
+<ul>
+  <li>Proceed to <a href="lab1.html">Lab 1 - Customising the API Connect Developer Portal</a> <strong>or</strong></li>
+  <li>Proceed to <a href="lab2.html">Lab 2 - Protecting a Payments API using oAuth 2.0</a></li>
+</ul>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

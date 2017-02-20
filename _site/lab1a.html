@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you’ll get a chance to use the APIC command line interface for creating LoopBack applications, the intuitive Web-based user interface, and explo...">
+<meta name="keywords" content=" ">
+<title>Lab 1 - Introduction to IBM API Connect | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 1 - Introduction to IBM API Connect</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you’ll get a chance to use the APIC command line interface for creating LoopBack applications, the intuitive Web-based user interface, and explore the various aspects associated with solution’s configuration of RESTful based services as well as their operation.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to create a simple LoopBack application</li>
+  <li>How to create a Representational State Transfer (REST) API definition</li>
+  <li>How to test a REST API</li>
+  <li>How to publish an API to the Developer Portal</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study used in this tutorial</h2>
+<p>In this tutorial, you will be starting from scratch to set up your development environment on your local machine, and then you will test the components of the toolkit by creating the default Notes LoopBack application. We will look at the created artifacts to get a better understanding of what is created for you. The notes application is a simple RESTful service that holds a set of “notes” in memory. In this lab we may be creating a new RESTful service and API, but in future labs you’ll be creating APIs with existing services.</p>
+
+<h2 id="before-you-begin">Before you begin</h2>
+<p>For this lab, you will be starting with your local image and installing node.js and the developer toolkit.  After that, if you do not already have a Bluemix account, you will be creating one for you and enabling the API Connect Essentials service on your account. The instructions you will follow will vary by the host operating system you are using. The three host OS’s supported by this are <code class="highlighter-rouge">Windows</code>, <code class="highlighter-rouge">Linux - Intel</code> and <code class="highlighter-rouge">Linux - Mac</code>.  Skip to the section for your appropriate operating system.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="creating-a-notes-application">1.1	- Creating a <code class="highlighter-rouge">notes</code> Application</h3>
+
+<ol>
+  <li>
+    <p>We will use the API Connect Developer Toolkit command line interface to create the initial application and explore the created artifacts.</p>
+  </li>
+  <li>
+    <p>From the terminal command line type:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>apic loopback
+</code></pre>
+    </div>
+
+    <p>This command starts the application generator, Yeoman, to help scaffold the new project. Just press enter for first two questions and then select <strong>notes</strong> for the kind of application.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>? What's the name of your application? notes
+? Enter name of the directory to contain the project: notes
+? What kind of application do you have in mind? 
+empty-server (An empty LoopBack API, without any configured models or datasources) 
+hello-world (A project containing a controller, including a single vanilla Message and a single remote method) 
+❯ notes (A project containing a basic working example, including a memory database)
+</code></pre>
+    </div>
+
+    <p>This creates an application named “notes” in a directory of the same name. The application is a basic Notes application. You will see a lot of messages printed to the command line window. It is creating a few resources for you and installing the various node modules. Once the node modules are loaded you’ll notice that the process creates swagger and product definitions for you. Finally, the process displays some hints about what to do next. Since we’ve been given such lovely suggestions about what to do next, we may as well follow the first one at least.</p>
+  </li>
+  <li>
+    <p>Change directories to the project directory:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>notes
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>List the directory: <a class="anchorjs-link " href="#loopback-files" aria-label="Anchor link for: loopback files" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: 1; padding-left: 0.375em;"></a></p>
+
+    <div id="loopback-files"></div>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls
+client  common  definitions  node_modules  package.json  server
+</code></pre>
+    </div>
+
+    <p>If you’re familiar with LoopBack or Node.js applications, some of the directories may be familiar to you. If not, here is a description of some of what is created.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Directory or file</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="highlighter-rouge">client</code></td>
+          <td>If the application has a front end, this is where the HTML, CSS, JavaScript, etc would be located. For our sample application there is only a stubbed out README.md.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">common</code></td>
+          <td>Files common to both the server and the client application.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">common/models</code></td>
+          <td>This sub-directory contains all the model JSON and JavaScript files. By model we’re referring to a data model.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">common/models/note.js</code></td>
+          <td>Custom script for the note data model. This file contains the implementation of the methods defined by the model definition file.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">common/models/note.json</code></td>
+          <td>The note model definition file. This file contains the definition of the properties and methods for this model.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">definitions</code></td>
+          <td>This directory contains the definitions for the APIs and the product contained in this application.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">definitions/notes-product.yaml</code></td>
+          <td>YAML file for the the notes product. Which includes default plans for testing locally.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">definitions/notes.yaml</code></td>
+          <td>Swagger definition file for the notes API. Includes information about the REST paths and operations, schemas for data models, security requirements, etc.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">node_modules</code></td>
+          <td>Directory containing all the required node modules for the default application.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">package.json</code></td>
+          <td>Standard Node.js package specification. Most importantly it contains the application package dependencies.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">server</code></td>
+          <td>This directory contains the Node.js application and configuration files. We’ll not look at them all in this tutorial, but here are a few.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">server/server.js</code></td>
+          <td>The main appication script for this application.<br /><br /><strong>Note:</strong> this is defined in the package.json file.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">server/config.json</code></td>
+          <td>This file contains the global application settings, such as REST API root, hostname and port.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">server/model-config.json</code></td>
+          <td>This file binds models to data sources and specifies whether a model is exposed over REST, among other things.</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">server/datasources.json</code></td>
+          <td>This file is the data source configuration file.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    <code class="highlighter-rouge">*.md</code> files, such as that found in the client directory, are markdown files used for internal documentation.</p>
+    </div>
+  </li>
+</ol>
+
+<h3 id="launching-the-notes-application">1.2	- Launching the <code class="highlighter-rouge">notes</code> Application</h3>
+
+<ol>
+  <li>
+    <p>Now that we’ve explored what is created by the application generator, let’s move on to the API Designer. From the command line:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>apic edit
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Next, click on the <code class="highlighter-rouge">start</code> button located on the bottom panel of the API Designer to launch the <code class="highlighter-rouge">notes</code> application.  On a Windows environment, you might see 2 node windows pop up on your screen.  Minimize, but do not close these windows.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/6.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once start completes, you should see a screen similar to this:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/7.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Notice that once the application is up and running, stop and restart buttons will appear on the bottom side of the screen:</p>
+
+    <p>At this point we’re ready to Explore and test our services.</p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    We used the web-based editor to launch the application. There’s also a command provided with the API Connect Developer Toolkit that can be utilized from the terminal to lauch the application: <code class="highlighter-rouge">apic start</code></p>
+    </div>
+  </li>
+</ol>
+
+<h3 id="testing-the-notes-application">1.3	- Testing the <code class="highlighter-rouge">notes</code> Application</h3>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Explore</code> button to switch to the API Explorer view.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/8.png" alt="" /></p>
+
+    <p>You will see all the exposed service paths displayed.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/exploreScreen.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Now we’re going to test the services using the GUI presented on the explore screen. You’ll notice that on the left several REST services are defined for us. In particular, take a look <code class="highlighter-rouge">POST /notes</code> and <code class="highlighter-rouge">GET /notes</code>.</p>
+
+    <p>If you’re not familiar with GET and POST, they are HTTP methods (sometimes called verbs). The POST method is used for creation calls to the service. The GET method is used to retrieve information from a service. In this case, we see that both methods are used against the <code class="highlighter-rouge">/notes</code> path. So, POST will create a <code class="highlighter-rouge">note</code> and GET will retrieve all the <code class="highlighter-rouge">notes</code> that have been created.</p>
+  </li>
+  <li>
+    <p>Start by creating a couple of notes. Click the <code class="highlighter-rouge">POST /notes</code> link in the left column. The other columns will scroll so that you’re looking at information and controls pertaining to the <code class="highlighter-rouge">POST /notes</code> service.</p>
+  </li>
+  <li>
+    <p>To test creation of a note, scroll down in the right hand column until the <code class="highlighter-rouge">Call operation</code> button is visible at the bottom. Just above the <code class="highlighter-rouge">Call operation</code> button you’ll see a <code class="highlighter-rouge">Generate</code> link. This link will generate dummy data for you to create a test call to this service.</p>
+  </li>
+  <li>
+    <p>Press the <code class="highlighter-rouge">Generate</code> link to generate some sample data.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/generate-data.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/generate.png" alt="" /></p>
+
+    <p>Your data will look different, but you’re ready to test the service.</p>
+  </li>
+  <li>
+    <p>Go ahead and press the <code class="highlighter-rouge">Call operation</code> button and scroll down to the <code class="highlighter-rouge">Response</code> section to see the results.</p>
+
+    <p>In the results, you should see a <code class="highlighter-rouge">Code: 200 OK</code> which indicates that a new <code class="highlighter-rouge">note</code> was created. If you received a different response, see the troubleshooting steps below.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/POST-results.png" alt="" /></p>
+
+    <div class="alert alert-troubleshooting" role="alert">
+      <p><i class="fa fa-cog"></i> <b>Troubleshooting:</b> <br />
+    You may see an error displayed that mentions a CORS issue. This has to do with certificates in your browser. Go ahead an click the given link to rectify this, accept any certificate, close the opened tab, and press the <code class="highlighter-rouge">Call operation</code> button again.  Additionally, be sure not to skip step 5, as doing a <code class="highlighter-rouge">POST</code> operation without generating payload will cause an error.</p>
+    </div>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/CORS-support-error.png" alt="" /></p>
+
+    <div class="alert alert-troubleshooting" role="alert">
+      <p><i class="fa fa-cog"></i> <b>Troubleshooting:</b> <br />
+    If you see a 500 error like the one below, make sure you press the <code class="highlighter-rouge">Generate</code> button before you press the <code class="highlighter-rouge">Call operation</code> button again. Otherwise, you’re trying to create a duplicate note.</p>
+    </div>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/duplicateRecordError.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once you have created one note, go ahead and create another one or two.</p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    It should be noted that you don’t need to use the <code class="highlighter-rouge">Generate</code> link. You can type data directly into the <code class="highlighter-rouge">Parameters</code>. You can also use <code class="highlighter-rouge">Generate</code> to create a template for you to use and then change the generated parameters. You may also notice that not all the parameters are always generated. This is because only the <code class="highlighter-rouge">title</code> parameter is required. Try pressing <code class="highlighter-rouge">Generate</code> several times to get a feel for how it works.</p>
+    </div>
+  </li>
+  <li>
+    <p>Finally, let’s test the <code class="highlighter-rouge">GET /notes</code> service. We should have two, three, or more notes created at this point. In the left hand column click the <code class="highlighter-rouge">GET /notes</code> link.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/get-notes.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the <code class="highlighter-rouge">Call operation</code> button and press it. Then scroll down to the results.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/GET-results.png" alt="" /></p>
+
+    <p>You should see all the notes that you generated in the result set.</p>
+
+    <div class="alert alert-warning" role="alert">
+      <p><i class="fa fa-warning"></i> <b>Important:</b> <br />
+    If you see an empty array, <code class="highlighter-rouge">[]</code>, as your result, then you’ve not successfully created any notes. This is also true if you stop the application and restart it. With the notes example, we’re using an in-memory database which means that nothing is persisted to disk. So, it is lost when the server is stopped and restarted. Lab 2 will walk through how to connect to your application to a persistent data source.</p>
+    </div>
+  </li>
+  <li>
+    <p>At this point, we are done testing the app locally. Click on the <code class="highlighter-rouge">Run</code> button again to return to the application launch screen.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Stop</code> button to stop the application.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/9.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="publishing-the-api-to-the-developer-portal">1.4	- Publishing the API to the Developer Portal</h3>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Publish</code> icon.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/publishButton.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select <code class="highlighter-rouge">Add and Manage Targets</code> from the menu.</p>
+  </li>
+  <li>
+    <p>Select <code class="highlighter-rouge">Add IBM Bluemix target</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/15.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Provide connection information to sign into the IBM API Connect Bluemix service then click the <code class="highlighter-rouge">Sign in</code> button: **Note you should be logged in already to Bluemix, so you should not need to reauthenticate.  It will automatically populate your information and have the <code class="highlighter-rouge">Sandbox</code> catalog already selected, so at this point you only need to click <code class="highlighter-rouge">Next</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/10.png" alt="" /></p>
+  </li>
+  <li>
+    <p>On the “Select an App” screen, choose <code class="highlighter-rouge">None</code> application and click the <code class="highlighter-rouge">Save</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/11.png" alt="" /></p>
+
+    <p>Our offline toolkit environment is now configured to speak to API Connect on Bluemix.</p>
+  </li>
+  <li>
+    <p>Click <code class="highlighter-rouge">Publish</code> button once more and select our target:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/12.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Here we have the opportunity to select what gets published. If we were working on multiple API products as part of this project, we could choose specific ones to publish.</p>
+
+    <p>Also, the option exists to only Stage the product. A Stage-only action implies that we’ll push the configuration to the Management server, but not actually make it available for consumption yet. The reason for doing this may be because your user permissions only allow staging, or that a different group is in charge of publishing Products.</p>
+
+    <p>Click the <code class="highlighter-rouge">Publish</code> button:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/publish-api.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Publish</code> button to make the API available in the Developer Portal.</p>
+  </li>
+  <li>
+    <p>Wait a moment while the Product is published, a Success message will appear letting you know the step is complete:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/publish-success.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="browsing-the-api-in-the-developer-portal">1.5	- Browsing the API in the Developer Portal</h3>
+
+<ol>
+  <li>
+    <p>To view the Published API, direct your browser to your developer portal link you set up in the previous lab.</p>
+  </li>
+  <li>
+    <p>This will bring you to your portal login page.  In order to view the API we have, we will need to register ourself as a developer on the portal.</p>
+
+    <div class="alert alert-warning" role="alert">
+      <p><i class="fa fa-warning"></i> <b>Important:</b> <br />
+    When you first create your developer portal it will create an <code class="highlighter-rouge">admin</code> user that is used to administrate the site.  This admin user cannot be used as a user to register applications and subscribe to API Products. So the next few steps will be devoted to creating a new developer user.</p>
+    </div>
+  </li>
+  <li>
+    <p>If you are still logged in as the <code class="highlighter-rouge">admin</code> user from the previous lab, Click on <code class="highlighter-rouge">Logout</code> at the top right to log out of the portal as the admin user. Otherwise, move on to the next step.</p>
+  </li>
+  <li>
+    <p>Click on <code class="highlighter-rouge">Create an account</code> at the top right</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/35.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Enter in your account information for the developer account.  This must be a different email address than your bluemix account.  Click <code class="highlighter-rouge">Create New Account</code> once all the requisite data in the form has been filled out.</p>
+  </li>
+  <li>
+    <p>A validation email will be sent out to the email address used at sign up.  Click on the validation link and then you will have completed the sign up process and will be authenticated into the page.</p>
+  </li>
+  <li>
+    <p>Once you are authenticated in, you can then Browse the <code class="highlighter-rouge">API Products</code> and see your <code class="highlighter-rouge">notes</code> product that is now published to your environment.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/26.png" alt="" /></p>
+  </li>
+  <li>
+    <p>At this point we will stop, as we will be building additional apis and services that will be published to the portal.</p>
+
+    <p>It should be noted that the notes application has more to it than we’ve shown in this lab. You’re encouraged to dig in and discover the custom method that’s implemented. In future labs, we’ll be doing more work in the Developer Portal. For instance we’ll be customizing the portal theme, registering an application, subscribing to APIs and testing them from a separate consumer application.</p>
+  </li>
+  <li>
+    <p>Close the <code class="highlighter-rouge">Firefox</code> web browser. If a warning is presented about closing multiple tabs, deselect the option to notify you in the future and click the <code class="highlighter-rouge">Close Tabs</code> button.</p>
+  </li>
+  <li>
+    <p>In the terminal, use the <code class="highlighter-rouge">control+c</code> keyboard command to quit the API Designer program.</p>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> You have developed and published your first API!</p>
+
+<p>In this lab you learned:</p>
+
+<ul>
+  <li>How to create a simple LoopBack application</li>
+  <li>How to create a Representational State Transfer (REST) API definition</li>
+  <li>How to test a REST API</li>
+  <li>How to publish an API to the Developer Portal</li>
+</ul>
+
+<p>Proceed to <a href="lab2.html">Lab 2 - Create a LoopBack Application</a></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

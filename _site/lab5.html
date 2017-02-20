@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you will learn how to create advanced API assemblies. Using the graphical design tools, you will create a new API called `financing` which will ...">
+<meta name="keywords" content=" ">
+<title>Lab 5 - Advanced API Assembly | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 5 - Advanced API Assembly</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you will learn how to create advanced API assemblies. Using the graphical design tools, you will create a new API called `financing` which will expose an existing SOAP service as a RESTful API. Additionally, you will create another API called `logistics` which connects to existing public services and uses the assembly tools to map responses into a desired format.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to create a new API, including object definitions and paths</li>
+  <li>How to configure an API to access an existing SOAP service</li>
+  <li>How to import an existing API from Open API definition document (a.k.a Swagger)</li>
+  <li>How to map data retrieved from multiple API calls into an aggregate response</li>
+  <li>How to use gatewayscript directly within an API assembly</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p>In this tutorial, you will expand the product offerings for <strong>ThinkIBM</strong>. In addition to the Inventory API, <strong>ThinkIBM</strong> wishes to provide API’s that offer financing and shipping logistics to consumer applications. Your goal is to utilize existing enterprise and public assets to create these API offerings.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="create-the-financing-api-rest-to-soap">5.1 - Create the Financing API (REST to SOAP)</h3>
+
+<ol>
+  <li>
+    <p>If the API Designer screen has not already been launched, open a terminal and start the designer by issuing the following commands:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/ThinkIBM/inventory
+apic edit
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Sign in with your registered Bluemix account.</p>
+  </li>
+  <li>
+    <p>Otherwise, click the <code class="highlighter-rouge">All APIs</code> link to return to the main Designer screen.</p>
+  </li>
+</ol>
+
+<h4 id="create-the-api-definition">5.1.1 - Create the API Definition</h4>
+
+<ol>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">+ Add</code> button and select <code class="highlighter-rouge">New OpenAPI from scratch</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_add_new.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Fill in the form values for the API, then click the <code class="highlighter-rouge">Create API</code> button to continue.</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">financing</code></p>
+
+      <p>Name: <code class="highlighter-rouge">financing</code></p>
+
+      <p>Version: <code class="highlighter-rouge">1.0.0</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_api_info.png" alt="" /></p>
+  </li>
+  <li>
+    <p>API Connect will generate a new OpenAPI definition file for the <code class="highlighter-rouge">financing</code> API and automatically load the API editor screen. Notice that the API does not contain any paths or data definitions. We will be adding these in the following steps.</p>
+  </li>
+  <li>
+    <p>Next, we need to create the model definition for our new API. These definitions are used in a few places. Their primary role is to serve as documentation in the developer portal on expected input and output parameters; however, they can also be used for data mapping actions. Click on <code class="highlighter-rouge">Definitions</code> from the API Designer menu.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+</code> icon in the <strong>Definitions</strong> section to create a new definition. Then, click on <code class="highlighter-rouge">new-definitions-1</code> to edit the new definition.</p>
+  </li>
+  <li>
+    <p>Edit the <code class="highlighter-rouge">Name</code> of the definition, set it to <code class="highlighter-rouge">paymentAmount</code>.</p>
+  </li>
+  <li>
+    <p>The new definition already adds in a sample property called <code class="highlighter-rouge">new-property-1</code>. Edit the property values:</p>
+
+    <blockquote>
+      <p>Property Name: <code class="highlighter-rouge">paymentAmount</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Monthly payment amount</code></p>
+
+      <p>Type: <code class="highlighter-rouge">float</code></p>
+
+      <p>Example: <code class="highlighter-rouge">199.99</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_definition_complete.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Now that we have a definition, we’ll create a path. Click on <code class="highlighter-rouge">Paths</code> from the API Designer menu.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">+</code> button to create a new path. The template will generate the path and a GET resource under the path. This is sufficient for our needs, but we could also add other resources and REST verbs to our path if needed.</p>
+  </li>
+  <li>
+    <p>Edit the default path location to be <code class="highlighter-rouge">/calculate</code>.</p>
+
+    <ul>
+      <li>Recall that our Base Path for this API is <code class="highlighter-rouge">/financing</code>. This new path will be appended to the base, creating a final path of <code class="highlighter-rouge">/financing/calculate</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">GET</code> operation to expand the configuration options for the resource.</p>
+  </li>
+  <li>
+    <p>Next, we have the option of adding request parameters to the operation. This defines the input to the API request. Since this is a GET request, we’ll add the required request parameters to the query component of the URI.</p>
+
+    <p>Click on the <code class="highlighter-rouge">Add Parameter</code> link to create a new query parameter. Then, select <code class="highlighter-rouge">Add new parameter</code> from the sub-menu.</p>
+  </li>
+  <li>
+    <p>We’re actually going to need three total parameters for this operation, so go ahead and click on the <code class="highlighter-rouge">Add Parameter</code> link two more times to add the parameter templates.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_parameter_template.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Edit the parameters to set the values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Located In</th>
+          <th>Description</th>
+          <th>Required</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>amount</td>
+          <td>Query</td>
+          <td>amount to finance</td>
+          <td>yes</td>
+          <td>float</td>
+        </tr>
+        <tr>
+          <td>duration</td>
+          <td>Query</td>
+          <td>length of term in months</td>
+          <td>yes</td>
+          <td>integer</td>
+        </tr>
+        <tr>
+          <td>rate</td>
+          <td>Query</td>
+          <td>interest rate</td>
+          <td>yes</td>
+          <td>float</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_parameter_complete.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Next we’ll set the schema for the response. Since we already defined the <code class="highlighter-rouge">paymentAmount</code> definition, we will select it from the drop down list. You will find the <code class="highlighter-rouge">paymentAmount</code> definition at the top of the list.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_resp_schema.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Next, click on <code class="highlighter-rouge">Services</code> from API Designer menu to load a service as policy that will be used in the assembly view later on.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+</code> icon in the <strong>Services</strong> section to import web service from WSDL.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_service.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Load from URL</code> icon and enter the WSDL URL below and then click <code class="highlighter-rouge">Next</code>:</p>
+
+    <p><a href="https://thinkibm-services.mybluemix.net/financing/calculate?wsdl">https://thinkibm-services.mybluemix.net/financing/calculate?wsdl</a></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_service_wsdl.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Show operations</code> to see the available operations in the WSDL end point. Select <code class="highlighter-rouge">financingService</code> then click <code class="highlighter-rouge">Done</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_service_wsdl_operation.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save the API definition.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/save-icon.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You have completed the creation of the new API definition. The path and model data will be presented to our consumers on the developer portal once it’s published.</p>
+  </li>
+</ol>
+
+<h4 id="build-the-financing-api-assembly">5.1.2 - Build the Financing API Assembly</h4>
+
+<ol>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Assemble</code> tab to access the assembly editor.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assemble_tab.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">DataPower Gateway policies</code> filter.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_gateway_policies.png" alt="" /></p>
+  </li>
+  <li>
+    <p>In the processing pipeline, mouse over the <code class="highlighter-rouge">invoke</code> policy and click the trash icon to delete it.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assembly_delete_invoke.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the bottom of the policy menu, drag and drop the <code class="highlighter-rouge">financing</code> web service operations to processing pipeline.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/add-financing-assembly.gif" alt="" /></p>
+  </li>
+  <li>
+    <p>Now we are going to modify the input and output <code class="highlighter-rouge">map</code> policy for mapping our REST API into SOAP.</p>
+  </li>
+  <li>
+    <p>In order to consume a SOAP-based service from our REST-based API, we need to map the query parameter inputs that we defined as part of the <code class="highlighter-rouge">GET /calculate</code> operation to a SOAP payload. To do so, click on the <code class="highlighter-rouge">financing: input</code> map policy on our pipeline to open the map editor.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">+</code> icon to make the editor window fill the screen.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_map_fullscreen.png" alt="" /></p>
+  </li>
+  <li>
+    <p>On the <strong>Input</strong> column, click on the <code class="highlighter-rouge">pencil</code> icon to bring up the input editor.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/input-pencil-icon.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Recall that our GET operation has three required query parameters: <code class="highlighter-rouge">amount</code>, <code class="highlighter-rouge">duration</code> and <code class="highlighter-rouge">rate</code>. Click on the <code class="highlighter-rouge">+ input</code> button three times to add the entries to the input table.</p>
+  </li>
+  <li>
+    <p>Fill in the values for each of the input parameters:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Context variable</th>
+          <th>Name</th>
+          <th>Content type</th>
+          <th>Definition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>request.parameters.amount</td>
+          <td>amount</td>
+          <td>none</td>
+          <td>float</td>
+        </tr>
+        <tr>
+          <td>request.parameters.duration</td>
+          <td>duration</td>
+          <td>none</td>
+          <td>integer</td>
+        </tr>
+        <tr>
+          <td>request.parameters.rate</td>
+          <td>rate</td>
+          <td>none</td>
+          <td>float</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assembly_map_input.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Done</code> button to return to the map editor.</p>
+  </li>
+  <li>
+    <p>For each of the <code class="highlighter-rouge">Input</code> query parameters, map them to their respective SOAP <code class="highlighter-rouge">Output</code> elements.</p>
+
+    <p>To map from an input field to an output field, click the circle next to the <em>source</em> element once, then click the circle next to the <em>target</em> element. A line will be drawn between the two, indicating a mapping from the source to the target.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assembly_map_input_to_output.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">X</code> button in the map editor to return to the policy pipeline.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">invoke</code> policy to open its editor.</p>
+  </li>
+  <li>
+    <p>The SOAP service <code class="highlighter-rouge">URL</code> has already been set for you during the service import when we create the API.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assembly_invoke.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">X</code> button to return to the policy pipeline.</p>
+  </li>
+  <li>
+    <p>After we invoke the SOAP service, we need to map the SOAP response into a custom object <code class="highlighter-rouge">paymentAmount</code>, which is created previously in API definition, as API response.  To do so, click on the <code class="highlighter-rouge">financing: output</code> map policy on our pipeline to open the map editor.</p>
+  </li>
+  <li>
+    <p>Click on the pencil icon to create a new output object.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">+ output</code> button.</p>
+  </li>
+  <li>
+    <p>Fill in the values for the output object:</p>
+
+    <blockquote>
+      <p>Context variable: <code class="highlighter-rouge">message.body</code></p>
+
+      <p>Name: <code class="highlighter-rouge">paymentAmount</code></p>
+
+      <p>Content type: <code class="highlighter-rouge">none</code></p>
+
+      <p>Definition: <code class="highlighter-rouge">#/definitions/paymentAmount</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assembly_map_output.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Done</code> button to return to the map editor.</p>
+  </li>
+  <li>
+    <p>To map SOAP response to custom object <code class="highlighter-rouge">paymentAmount</code>, click the circle next to the <em>source</em> element once, then click the circle next to the <em>target</em> element. A line will be drawn between the two, indicating a mapping from the source to the target.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/fin_assembly_map_output_link.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">X</code> button in the map editor to return to the policy pipeline.</p>
+  </li>
+  <li>
+    <p>You are now finished with the assembly for the <code class="highlighter-rouge">financing</code> API. The assembly takes the following actions:</p>
+
+    <ul>
+      <li>Maps the REST query parameters into a SOAP body.</li>
+      <li>Invokes the SOAP service.</li>
+      <li>Transforms the SOAP service’s response into JSON.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Save the API definition.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/save-icon.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="add-logistics-api-advanced-assembly">5.2 - Add Logistics API (Advanced Assembly)</h3>
+
+<p>In this lab section, we will be adding a new API called <code class="highlighter-rouge">logistics</code> which will provide helper services around calculating shipping rates and locating nearby stores.</p>
+
+<p>Rather than require you to build the entire API from scratch again, you will see how you can use the source editor to paste in an API definition that has already been started for you.</p>
+
+<h4 id="import-predefined-api-definition">5.2.1 - Import Predefined API Definition</h4>
+
+<ol>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">All APIs</code> link to return to the main API Designer screen.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">+ Add</code> button to <code class="highlighter-rouge">Import an existing OpenAPI</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/import-logistics-api.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Or import from URL...</code> link, enter the <code class="highlighter-rouge">logistics</code> API definition template URL below and click the <code class="highlighter-rouge">Import</code> button:</p>
+
+    <p><a href="https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab5/logistics_1.0.0.yaml">https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab5/logistics_1.0.0.yaml</a></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_api_import.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="create-the-logistics-api-assembly">5.2.2 - Create the Logistics API Assembly</h4>
+
+<ol>
+  <li>
+    <p>Switch to the <code class="highlighter-rouge">Assemble</code> tab and click the <code class="highlighter-rouge">Create assembly</code> button.</p>
+  </li>
+  <li>
+    <p>Add an <code class="highlighter-rouge">activity-log</code> policy to the assembly pipeline.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">activity-log</code> policy to open editor, configure it to log the <code class="highlighter-rouge">payload</code> for the <strong>Content</strong> field.</p>
+  </li>
+  <li>
+    <p>Add an <code class="highlighter-rouge">operation-switch</code> policy to the right of the activity-log step.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">operation-switch</code> policy to launch the editor. A single case <code class="highlighter-rouge">case 0</code> is created by default.</p>
+  </li>
+  <li>
+    <p>Click <code class="highlighter-rouge">search operations...</code> to bring up the drop-down list of available operations.</p>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">shipping.calc</code> operation.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+ Case</code> button to add a second case for the <code class="highlighter-rouge">get.stores</code> operation.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">X</code> to close the operation switch configuration editor.</p>
+
+    <p>You should see two new processing pipelines created on your <code class="highlighter-rouge">operation-switch</code> step - one for each case:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-twopipelines.png" alt="" /></p>
+  </li>
+</ol>
+
+<h5 id="configure-the-shippingcalc-case">5.2.2.1 - Configure the <code class="highlighter-rouge">shipping.calc</code> Case:</h5>
+
+<p>This operation will end up invoking two separate back-end services to acquire shipping rates for the respective companies, then utilize a map action to combine the two separate responses back into a single, consolidated message for our consumers.</p>
+
+<ol>
+  <li>
+    <p>Add an invoke policy to the <code class="highlighter-rouge">shipping.calc</code> case with the following properties:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">invoke_xyz</code></p>
+
+      <p>URL: <code class="highlighter-rouge">$(shipping_svc_url)?company=xyz&amp;from_zip=90210&amp;to_zip={zip}</code></p>
+
+      <p>Stop on error: <code class="highlighter-rouge">unchecked</code></p>
+
+      <p>Response object variable (scroll to the bottom): <code class="highlighter-rouge">xyz_response</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_invokexyz1.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/uncheck-stop-on-error.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_invokexyz2.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />The <code class="highlighter-rouge"><span class="p">{</span><span class="err">zip</span><span class="p">}</span></code> parameter provided here is a reference to the <code class="highlighter-rouge">zip</code> parameter defined as input to the operation. The <code class="highlighter-rouge"><span class="p">{</span><span class="err">zip</span><span class="p">}</span></code> portion of the URL will get replaced by the actual zip code provided by then API consumers.</p>
+    </div>
+  </li>
+  <li>
+    <p>Hover over the <code class="highlighter-rouge">invoke_xyz</code> policy and click on the <code class="highlighter-rouge">clone</code> button to add another invoke action:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/clone-invoke-action.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Edit the new invoke policy with the following properties:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">invoke_cek</code></p>
+
+      <p>URL: <code class="highlighter-rouge">$(shipping_svc_url)?company=cek&amp;from_zip=90210&amp;to_zip={zip}</code></p>
+
+      <p>Response object variable: <code class="highlighter-rouge">cek_response</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_invokecek1.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_invokecek2.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Add a <code class="highlighter-rouge">map</code> policy after the last invoke, then click it to open the editor.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">gear</code> icon next to Map and specify the following map properties.  Click <code class="highlighter-rouge">done</code> when finished:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">map_responses</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Map responses from invoke_xyz and invoke_cek to output</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-map-properties.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-map-propertiesa.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the pencil button to add an input. Specify the following input configuration:</p>
+
+    <blockquote>
+      <p>Context variable: <code class="highlighter-rouge">xyz_response.body</code></p>
+
+      <p>Name: <code class="highlighter-rouge">xyz</code></p>
+
+      <p>Content type: <code class="highlighter-rouge">application/json</code></p>
+
+      <p>Definition: <code class="highlighter-rouge">Inline schema</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>After you select <code class="highlighter-rouge">Inline schema</code>, you will be prompted to “Provide a schema”.</p>
+
+    <p>Copy the following predefined schema from the link below into the schema editor window.</p>
+
+    <p><a href="https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab5/schema_shippingSvc.yaml">https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab5/schema_shippingSvc.yaml</a></p>
+
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">$schema</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://json-schema.org/draft-04/schema#'</span>
+<span class="s">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://jsonschema.net'</span>
+<span class="s">type</span><span class="pi">:</span> <span class="s">object</span>
+<span class="s">properties</span><span class="pi">:</span>
+  <span class="s">company</span><span class="pi">:</span>
+    <span class="s">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://jsonschema.net/company'</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">string</span>
+    <span class="s">name</span><span class="pi">:</span> <span class="s">company</span>
+  <span class="s">rates</span><span class="pi">:</span>
+    <span class="s">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://jsonschema.net/rates'</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">object</span>
+    <span class="s">properties</span><span class="pi">:</span>
+      <span class="s">next_day</span><span class="pi">:</span>
+        <span class="s">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://jsonschema.net/rates/next_day'</span>
+        <span class="s">type</span><span class="pi">:</span> <span class="s">string</span>
+        <span class="s">name</span><span class="pi">:</span> <span class="s">next_day</span>
+      <span class="s">two_day</span><span class="pi">:</span>
+        <span class="s">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://jsonschema.net/rates/two_day'</span>
+        <span class="s">type</span><span class="pi">:</span> <span class="s">string</span>
+        <span class="s">name</span><span class="pi">:</span> <span class="s">two_day</span>
+      <span class="s">ground</span><span class="pi">:</span>
+        <span class="s">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://jsonschema.net/rates/ground'</span>
+        <span class="s">type</span><span class="pi">:</span> <span class="s">string</span>
+        <span class="s">name</span><span class="pi">:</span> <span class="s">ground</span>
+    <span class="s">name</span><span class="pi">:</span> <span class="s">rates</span>
+<span class="s">required</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">company</span>
+  <span class="pi">-</span> <span class="s">rates</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Click <code class="highlighter-rouge">Done</code> to close the Schema window</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-map-xyz-schema.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the pencil button again to add another input. Specify the following input configuration:</p>
+
+    <blockquote>
+      <p>Context variable: <code class="highlighter-rouge">cek_response.body</code></p>
+
+      <p>Name: <code class="highlighter-rouge">cek</code></p>
+
+      <p>Content type: <code class="highlighter-rouge">application/json</code></p>
+
+      <p>Definition: <code class="highlighter-rouge">Inline schema</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Paste the same schema definition that was used for the previous input (for our lab purposes, the responses from the shipping service are in the same format, thus using the same schema)</p>
+  </li>
+  <li>
+    <p>You now have two inputs assigned to the <code class="highlighter-rouge">map</code> policy:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-map-responses-inputs.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Done</code> button to return to the editor.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">pencil</code> icon next to <code class="highlighter-rouge">Output</code>, then click the <code class="highlighter-rouge">+ output</code> button to add an output field with the following properties:</p>
+
+    <blockquote>
+      <p>Context variable: <code class="highlighter-rouge">message.body</code></p>
+
+      <p>Name: <code class="highlighter-rouge">output</code></p>
+
+      <p>Content type: <code class="highlighter-rouge">application/json</code></p>
+
+      <p>Definition: <code class="highlighter-rouge">#/definitions/shipping</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-map-responses-output.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Done</code> button to return to the editor.</p>
+  </li>
+  <li>
+    <p>Complete the mapping. To map from an input field to an output field, click the circle next to the <em>source</em> element once, then click the circle next to the <em>target</em> element. A line will be drawn between the two, indicating a mapping from the source to the target.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-map-complete.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">X</code> to close the map editor.</p>
+
+    <p>Your assembly policy for the <code class="highlighter-rouge">shipping.calc</code> operation is now complete.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_assembly_shipping_calc_complete.png" alt="" /></p>
+
+    <div class="alert alert-troubleshooting" role="alert">
+      <p><i class="fa fa-cog"></i> <b>Troubleshooting:</b> <br />If there is an <code class="highlighter-rouge">exclamation mark</code> badge in <code class="highlighter-rouge">invoke_xyz</code>,  you may ignore this message.</p>
+    </div>
+  </li>
+  <li>
+    <p>Save your changes.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/save-icon.png" alt="" /></p>
+  </li>
+</ol>
+
+<h5 id="configure-the-getstores-case">5.2.2.2 - Configure the <code class="highlighter-rouge">get.stores</code> Case:</h5>
+
+<p>This operation will call out to the Google Geocode API to obtain location information about the provided zip code, then utilize a simple gatewayscript to modify the response and provide a formatted Google Maps link.</p>
+
+<ol>
+  <li>
+    <p>Add an invoke policy to the <code class="highlighter-rouge">get.stores</code> case with the following properties:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">invoke_google_geolocate</code></p>
+
+      <p>URL: <code class="highlighter-rouge">https://maps.googleapis.com/maps/api/geocode/json?&amp;address={zip}</code></p>
+
+      <p>Stop on error: <code class="highlighter-rouge">unchecked</code></p>
+
+      <p>Response object variable (scroll to the bottom): <code class="highlighter-rouge">google_geocode_response</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_invokegeolocate1.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/uncheck-stop-on-error.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_invokegeolocate2.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Add a <code class="highlighter-rouge">gatewayscript</code> policy with the following properties:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">gws-format-maps-link</code></p>
+
+      <p>Paste the following predefined script from the link below into the code section of the policy.</p>
+    </blockquote>
+
+    <p><a href="https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab5/gws_formatMapsLink.js">https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab5/gws_formatMapsLink.js</a></p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// Require API Connect Functions</span>
+<span class="kd">var</span> <span class="nx">apic</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'local:///isp/policy/apim.custom.js'</span><span class="p">);</span>
+    
+<span class="c1">// Save the Google Geocode response body to variable</span>
+<span class="kd">var</span> <span class="nx">mapsApiRsp</span> <span class="o">=</span> <span class="nx">apic</span><span class="p">.</span><span class="nx">getvariable</span><span class="p">(</span><span class="s1">'google_geocode_response.body'</span><span class="p">);</span>
+    
+<span class="c1">// Get location attributes from geocode response body </span>
+<span class="kd">var</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">mapsApiRsp</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
+    
+<span class="c1">// Set up the response data object, concat the latitude and longitude  </span>
+<span class="kd">var</span> <span class="nx">rspObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"google_maps_link"</span><span class="p">:</span> <span class="s2">"https://www.google.com/maps?q="</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">lat</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">lng</span>  
+<span class="p">};</span>
+    
+<span class="c1">// Save the output  	</span>
+<span class="nx">apic</span><span class="p">.</span><span class="nx">setvariable</span><span class="p">(</span><span class="s1">'message.body'</span><span class="p">,</span> <span class="nx">rspObj</span><span class="p">);</span>
+</code></pre>
+    </div>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics-gws.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />Take a quick look at line 5. Notice how our gateway script file is reading the body portion of the <code class="highlighter-rouge">google_geocode_response</code> variable which was assigned to the output of the <code class="highlighter-rouge">invoke</code> action.</p>
+    </div>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">X</code> to close the gatewayscript editor.</p>
+  </li>
+  <li>
+    <p>Your assembly for the <code class="highlighter-rouge">logistics</code> API will now include two separate operation policies:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/logistics_assembly_complete.png" alt="" /></p>
+
+    <div class="alert alert-troubleshooting" role="alert">
+      <p><i class="fa fa-cog"></i> <b>Troubleshooting:</b> <br />There may be an <code class="highlighter-rouge">exclamation mark</code> badge in <code class="highlighter-rouge">invoke_xyz</code> or <code class="highlighter-rouge">invoke_google</code>.  You may ignore this message.</p>
+    </div>
+  </li>
+  <li>
+    <p>Save your changes.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab5/save-icon.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="move-the-logistics-definition-file">5.2.3 - Move the Logistics Definition File</h4>
+
+<p>In this version of the APIC toolkit, our new Logistics API file is placed in a location apart from our other API definitions. We’ll need to move it to ensure things are consistent.</p>
+
+<ol>
+  <li>
+    <p>Return to the terminal editor. Stop the API Designer process:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>control+c
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Navigate to the <code class="highlighter-rouge">~/ThinkIBM/inventory</code> directory.</p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />In the following steps, the example commands are shown from a Linux terminal. You are free to move the file using the method of your choice.</p>
+    </div>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">student@ubuntu:~/ThinkIBM/inventory$ </span>ls -l
+total 32
+drwxrwxr-x  3 student student 4096 Jan 24 13:09 common
+drwxrwxr-x  2 student student 4096 Jan 24 15:02 definitions
+-rw-rw-r--  1 student student 8873 Jan 24 14:51 logistics_1.0.0.yaml
+drwxrwxr-x 15 student student 4096 Jan 24 13:08 node_modules
+-rw-rw-r--  1 student student  729 Jan 24 13:12 package.json
+drwxrwxr-x  3 student student 4096 Jan 24 13:13 server
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Locate the <code class="highlighter-rouge">logistics_1.0.0.yaml</code> file and move it into the <code class="highlighter-rouge">~/ThinkIBM/inventory/definitions</code> directory.</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">student@ubuntu:~/ThinkIBM/inventory$ </span>mv logistics_1.0.0.yaml definitions/
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">~/ThinkIBM/inventory/definitions</code> directory will now contain the configuration files for all our APIs:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">student@ubuntu:~/ThinkIBM/inventory$ </span>ls -l definitions/
+total 60
+-rw-rw-r-- 1 student student  9475 Jan 24 14:35 financing_1.0.0.yaml
+-rw-rw-r-- 1 student student  1871 Jan 24 14:55 inventory-product.yaml
+-rw-rw-r-- 1 student student 17182 Jan 24 13:21 inventory.yaml
+-rw-rw-r-- 1 student student  8873 Jan 24 14:51 logistics_1.0.0.yaml
+-rw-rw-r-- 1 student student  8868 Jan 24 13:20 oauth_1.0.0.yaml
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> You have successfully configured two new API’s with advanced assemblies. In the next lab, you will bundle the API’s into a Product and publish it to the consumer portal.</p>
+
+<p>Proceed to <a href="lab6.html">Lab 6 - Working with API Products</a></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you will learn the consumer experience for APIs that have been exposed to your developer organization. Using the developer portal, you will firs...">
+<meta name="keywords" content=" ">
+<title>Lab 7 - Consumer Experience | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 7 - Consumer Experience</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you will learn the consumer experience for APIs that have been exposed to your developer organization. Using the developer portal, you will first login in as the admin user to load a Think IBM custom theme. You will then login as a developer to register your application and then subscribe to an API and test that API.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In the this lab, you will learn:</p>
+
+<ul>
+  <li>How to add a custom theme to change the overall look and feel of the developer portal.</li>
+  <li>How to register an application with the developer portal.</li>
+  <li>How to subscribe to a plan in order to consume an API.</li>
+  <li>How to test an API from the developer portal.</li>
+  <li>How to consume an API from a sample test application.</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p>In this tutorial, <strong>ThinkIBM</strong> wishes to brand their developer portal to their own look and feel. They also want to provide a self-service experience to application developers who are potential consumers of their APIs.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="customize-the-developer-portal">7.1 - Customize the Developer Portal</h3>
+
+<p>In this section, you will leverage a custom prebuilt theme. A theme file is packaged as a zip file that contains a set of predefined files. The theme zip file is what is loaded into the developer portal. The best method for creating a custom theme is to obtain an existing custom theme, rename it and change the files as explained in the table below to meet your customization needs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">overrides.css</code></td>
+      <td>This style sheet overrides the fonts, colors and other defaults from the inherited base IBM API Connect theme. The name of this css file is specified in the theme.info file.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">screenshot.png</code></td>
+      <td>The file contains a screenshot of the home page for the custom theme and is used in the appearance settings so you can easily find the theme you want to enable and set as the default theme. When you are finishing completing the edits to the overrides.css and have set up the welcome banner to your satisfaction, you should take a screen shot of the developer portal home page and capture it with Snagit or some other screen capture tool and place the file in the top level directory of the theme file. The name of this screenshot file is specified in the theme.info file.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">templete.php</code></td>
+      <td>The template.php file contains your sub-theme’s functions to manipulate Drupal’s default markup. It is one of the most useful files when creating or modifying Drupal themes. With this file you can modify any theme hooks variables or add your own variables, using preprocess or process functions. Override any theme function: that is, replace a module’s default theme function with one you write. Call hook alter functions, which allow you to alter various parts of Drupal’s internals, including the render elements in forms. See <a href="http://api.drupal.org">http://api.drupal.org</a> for more information about these functions.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">thinkibm_connect_theme.info</code></td>
+      <td>The .info file is a static text file for defining and configuring a theme. Each line in the.info file is a key-value pair with the key on the left and the value on the right, with an “equals sign” between them (e.g. name = my_theme). The info file naming conventions needs to have the theme name specified as part of the filename. The project key in the .info file contains the name of the theme.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">theme-settings.php</code></td>
+      <td>Drupal themes get a number of configurable settings options for free. For example, most provide toggle switches for the search box, site slogans, user pictures, and so on. Similarly, most provide file uploading widgets to add a custom logo or favicon. These settings are easy: Drupal will add them to the theme’s configuration page by default, so it takes no extra work. We want to create our own custom setting, however; one that adds a hidden field that contains the current release information to the Theme configuration form. To do that, we’ll need to add a new file to the theme: <code class="highlighter-rouge">theme-settings.php</code>. The function name specified within this file needs to be prefixed with the theme name: <code class="highlighter-rouge">thinkibm_connect_theme</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">thinkibm_welcome_banner.png</code></td>
+      <td>This file provides the image that shows up in the welcome banner. Although the welcome banner does not need to be part of the theme zip file contents, it is useful to place the welcome banner with other theme files.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">favicon.ico</code></td>
+      <td>In web development, you can provide a small logo for your site that appears near the address bar and in the bookmarks folder in a visitor’s browser. This logo is called the favicon. Drupal provides a default one, which is the recognizable water drop logo. Using the Drupal logo as the favicon is fine but if you really want to make your site stand out, you should provide your own. Favicon files are in the .ico format and are extremely small in dimensions. The default Drupal favicon is 32 pixels high by 32 pixels wide, many browsers use a 16 x 16 pixel version that can be included in the same file. This is because the favicon is only an icon that shows up in the address bar and favorites (bookmarks) list and typically there is not a lot of room there. Any favicon that you create should be just as small.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">logo.png</code></td>
+      <td>The default logo that appears at the top left-hand side of the developer portal page.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="install-and-configure-a-custom-theme">7.1.1 - Install and Configure a Custom Theme</h4>
+
+<p>Now that we have explained the contents of a custom theme file, it is time to load the custom theme.</p>
+
+<ol>
+  <li>
+    <p>Return to the Bluemix API Manager screen.</p>
+
+    <p>Navigate to the Dashboard section and click on the <code class="highlighter-rouge">Sandbox</code> catalog tile.</p>
+
+    <p>Choose the <code class="highlighter-rouge">Settings</code> tab, followed by the <code class="highlighter-rouge">Portal</code> option.</p>
+
+    <p>Click on the <code class="highlighter-rouge">Portal URL</code> link to launch the Developer Portal.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/launch-portal.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Login into the developer portal as an administrator using a username of <code class="highlighter-rouge">admin</code> and the password you set up in Lab 1.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/PortalAdminLogin.png" alt="" /></p>
+  </li>
+  <li>
+    <p>From the Administrator menu, select <code class="highlighter-rouge">Appearance</code> and then <code class="highlighter-rouge">Install new theme</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/InstallNewPortalTheme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>In the <code class="highlighter-rouge">Install from a URL</code> field, enter the following URL then click the <code class="highlighter-rouge">Install</code> button:</p>
+
+    <p><a href="https://github.com/ibm-apiconnect/pot/raw/gh-pages/assets/lab7/portal-theme.zip">https://github.com/ibm-apiconnect/pot/raw/gh-pages/assets/lab7/portal-theme.zip</a></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/install-theme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once the installation of the custom theme completes, click the <code class="highlighter-rouge">Enable newly added themes</code> link.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/enable-theme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down the list of themes to find the <code class="highlighter-rouge">thinkibm_connect 7.50</code> theme.</p>
+
+    <p>Click the <code class="highlighter-rouge">Enable and set default link</code> link.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/set-default-theme.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Home</code> icon in the top-left corner of the screen to return to the home page.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/CloseThemeSettings.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="customize-the-welcome-banner">7.1.2 - Customize the Welcome Banner</h4>
+
+<p>Now we want to change the default Welcome banner to use our custom Welcome banner image.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the blocks content page by selecting <code class="highlighter-rouge">Content &gt; Blocks</code> from the admin menu.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/ThinkIBMBlocks.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Underneath operations select <code class="highlighter-rouge">Edit</code> to the right of the Welcome banner block.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/edit-welcome-banner.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Before you can set the image, you will need to download it to your local computer’s disc drive. You can download the file from this URL:</p>
+
+    <p><a href="https://thinkibm-services.mybluemix.net/portal/welcome-banner.png">https://thinkibm-services.mybluemix.net/portal/welcome-banner.png</a></p>
+  </li>
+  <li>
+    <p>Scroll down the banner edit page, locate the <em>Image</em> section and click the <code class="highlighter-rouge">Chose file</code> button to launch the file explorer.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/choose-banner-file.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Find the <code class="highlighter-rouge">welcome-banner.png</code> file. Then, click the <code class="highlighter-rouge">Open</code> button.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Upload</code> button to upload the new welcome banner image.</p>
+  </li>
+  <li>
+    <p>Scroll to the bottom of the page and click the <code class="highlighter-rouge">Save</code> button.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">x</code> button to close the content block settings.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/close-content-block.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="change-the-region-settings-for-the-content-blocks">7.1.3 - Change the Region Settings for the Content Blocks</h4>
+
+<p>The region settings for some of the content blocks were reset when we loaded the new theme, so we will set these back.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the region settings for block content page by selecting <code class="highlighter-rouge">Structure &gt; Blocks</code> from the admin menu.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/ThinkIBMBlockRegionSettings.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Locate the <strong>Sidebar first</strong> block. You will see entries for <code class="highlighter-rouge">Navigation</code>, <code class="highlighter-rouge">Support</code> and <code class="highlighter-rouge">User login</code>.</p>
+  </li>
+  <li>
+    <p>For <strong>both</strong> the <code class="highlighter-rouge">Navigation</code> and <code class="highlighter-rouge">User Login</code> entries, select <code class="highlighter-rouge">- None -</code> from the drop down menu.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/SetBlockRegionstoNone.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The only entry left in the section should be <code class="highlighter-rouge">Support</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/sidebar-first-complete.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the bottom of the screen anc click the <code class="highlighter-rouge">Save Blocks</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/SaveBlockRegions.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll back to the top and click the <code class="highlighter-rouge">x</code> button to close the block region settings.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/close-region-block.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You are finished with customizing the developer portal. There is a lot more that can be customized than what we have time for in this lab. Log out of the developer portal.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/PortalAdminLogout.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="register-an-application-as-a-developer">7.2 - Register an Application as a Developer</h3>
+
+<p>In this section, you will log into the portal as a user in the application developer role, then register an application that will be used to consume APIs. If you have not created your developer account from Lab 1, you will need to use the <code class="highlighter-rouge">Create an account</code> link to do so now.</p>
+
+<ol>
+  <li>
+    <p>Login into the developer portal as an application developer using your developer credentials.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Apps</code> link, then click on the <code class="highlighter-rouge">Register new Application</code> link.</p>
+  </li>
+  <li>
+    <p>Enter a title and description for the application and click the <code class="highlighter-rouge">Submit</code> button.</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">ThinkIBM Consumer</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Test Application for ThinkIBM APIs</code></p>
+
+      <p>OAuth Redirect URI: <code class="highlighter-rouge">&lt; leave blank &gt;</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>We need to capture the Client Secret and Client ID in a text editor for later use by our test application. Select the <code class="highlighter-rouge">Show Client Secret</code> checkbox next to Client Secret at the top of the page and the <code class="highlighter-rouge">Show</code> checkbox next to Client ID.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/ShowClientSecretandID.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Open your favorite text editor and copy/paste both the Client ID and Client Secret to your editor. Add a notation above each item so you know which value is the Client ID and which is the Client Secret.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/SaveClientIDandSecret.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="subscribe-to-a-plan-for-the-thinkibm-apis">7.3 - Subscribe to a Plan for the ThinkIBM APIs</h3>
+<p>In this section, we will subscribe to a plan for the ThinkIBM APIs using the ThinkIBM Consumer application.</p>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">API Products</code> link.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/PortalAPIProductsList.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">think (v1.0.0)</code> API product link.</p>
+  </li>
+  <li>
+    <p>You will be directed to the Product page which lists the available plans for subscription.</p>
+
+    <p>Click on the <code class="highlighter-rouge">Subscribe</code> button under the <code class="highlighter-rouge">Silver</code> plan.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/SubscribetoThinkSilverPlan.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />The Gold plan requires approval by the API provider for any subscription requests and allows unlimited requests for a given time period. The Silver plan is limited to 100 requests per hour and does not require approval by the API provider for subscription requests.</p>
+    </div>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">Think IBM Web Consumer</code> toggle and click the <code class="highlighter-rouge">Subscribe</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/subscribe-to-plan.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">Think IBM Web Consumer</code> Web application is now subscribed to the Silver plan for the <code class="highlighter-rouge">think</code> API product.</p>
+  </li>
+</ol>
+
+<h3 id="test-think-product-apis-from-the-developer-portal">7.4 - Test <code class="highlighter-rouge">think</code> Product APIs from the Developer Portal</h3>
+
+<p>In this section, we will use the developer portal to test one of the think product APIs. This is useful for application developers to <strong><em>try out</em></strong> the APIs before their application is fully developed or to simply see the expected response based on inputs they provide the API. Later in this lab, you will run an actual application that is already developed and uses these same APIs. We will test the <code class="highlighter-rouge">logistics</code> API from the developer portal.</p>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">logistics</code> link on the left-hand navigation menu and then expand the <code class="highlighter-rouge">GET /shipping</code> path by clicking on the twisty next to the path.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/PortalExpandShipping.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the <strong>Try this operation</strong> section for the <code class="highlighter-rouge">GET /shipping</code> path. Enter any zip code and click the <code class="highlighter-rouge">Call Operation</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/PortalTryShippingOperation.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scoll down below the <code class="highlighter-rouge">Call operation</code> button. You should see a <code class="highlighter-rouge">200 OK</code> and a response body as shown below.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/PortalTryShippingOperationResultsSuccess.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="test-the-apis-from-the-think-ibm-web-consumer-application">7.5 - Test the APIs from the Think IBM Web Consumer Application</h3>
+
+<p>Now that you have browsed the API Portal and registered / tested the API’s that <strong>ThinkIBM</strong> is providing, it’s time to test them out from a real application. We have provided a sample consumer application which will be used to interract with the <strong>ThinkIBM</strong> API’s.</p>
+
+<ol>
+  <li>
+    <p>Open a new browser tab and navigate to:</p>
+
+    <p><a href="https://thinkibm-consumer.mybluemix.net">https://thinkibm-consumer.mybluemix.net</a></p>
+  </li>
+  <li>
+    <p>In order to set up the consumer app to use your registered client credentials, a setup screen will be displayed asking for some application configuration parameters.</p>
+  </li>
+  <li>
+    <p>Using the Client ID and Client Secret values you saved earlier in your text editor, copy/paste them into the <code class="highlighter-rouge">Client ID</code> and <code class="highlighter-rouge">Client Secret</code> fields as shown below:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/consumer-app-config-creds.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You will also need to enter the API Connect Host, Organization and Catalog values. The easiest way to find these is to return to the API Manager on Bluemix and browse the Catalog Endpoint Settings as shown below:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/consumer-app-config-host.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Submit</code> button to complete the application configuration. The test application saves your settings in browser session variables.</p>
+  </li>
+  <li>
+    <p>The home page is a simple landing page which does not invoke any of the API’s. Recall that in <strong>Lab 4</strong> you secured the <code class="highlighter-rouge">inventory</code> API by requiring an OAuth token. If you attempt to view the Item Inventory before logging in, you will be challenged for a username and password. Either click on the <code class="highlighter-rouge">Browse Item Inventory</code> button, or the <code class="highlighter-rouge">Log In</code> link to open the login prompt.</p>
+  </li>
+  <li>
+    <p>Enter any Username and Password then click the <code class="highlighter-rouge">Log In</code> button. Our sample authentication service is a dummy repository that will accept any credentials provided.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/enter-oauth-creds.png" alt="" /></p>
+
+    <div class="alert alert-success" role="alert">
+      <p><i class="fa fa-check-square-o"></i> <b>Tip:</b> <br />The consumer app will contact our OAuth Token URL and handle the token exchange using standard OAuth proceedures. If you’re interested in seeing the token, you can open your browser’s developer tools and view the Console logs and Network trace:</p>
+    </div>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/consumer-app-console.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once you are logged in, the consumer application will redirect you to the item inventory page. The data displayed on the page is being powered by our <code class="highlighter-rouge">inventory</code> API! The consumer application is calling to our API, which is then being sent to our LoopBack application which handles the connection to the Cloudant data source where the inventory item data is persisted.</p>
+  </li>
+  <li>
+    <p>Click around the pages. Use the review form to leave new reviews for items. Recall how the item reviews are separate data models stored in a different data source, yet are related to the items through our LoopBack application.</p>
+
+    <p>Notice how the product rating is updated automatically as new reviews are posted. This happens because of the custom code you added to the LoopBack application in <strong>Lab 3</strong>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/customer-reviews.png" alt="" /></p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/updated-rating.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Continue testing the features of the consumer application. Try entering your home zip code to obtain shipping data. This feature is powered by the <code class="highlighter-rouge">logistics</code> APIs that were built using advanced assembly techniques in Lab 5. Your quotes will vary based on the zip code provided.</p>
+
+    <p>Notice how you are also provided a link to the nearest store. Clicking here will launch the Google Maps link which was also built in our Lab 5 assembly.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/shipping-results.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Finally, try clicking on the <code class="highlighter-rouge">Calculate Monthly Payment</code> link. This feature is powered by the <code class="highlighter-rouge">financing</code> API that was created using our REST-to-SOAP assembly in Lab 5.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab7/financing-results.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Repeat the steps on a few of products to drive data into the analytics database.</p>
+  </li>
+</ol>
+
+<h2 id="completion">Completion</h2>
+
+<p><strong>Congratulations!</strong> You have completed Lab 7!</p>
+
+<p>Proceed to <a href="lab8.html">Lab 8 - Analytics in API Connect</a></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

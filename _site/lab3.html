@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you will add capabilities into the LoopBack application which was created in Lab 2. You will add custom javascript code which will alter the def...">
+<meta name="keywords" content=" ">
+<title>Lab 3 - Customize and Deploy the Inventory Application | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 3 - Customize and Deploy the Inventory Application</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you will add capabilities into the LoopBack application which was created in Lab 2. You will add custom javascript code which will alter the default behavior of the application. Once your edits are complete, you will package the application and publish it to Bluemix as a Cloud Foundry Application where it will be managed and enforced by the API Connect solution.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>About LoopBack remote hooks</li>
+  <li>How to create a remote hook</li>
+  <li>How to publish a LoopBack application to Bluemix</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p>At this point, you have: created a basic application template, added an <code class="highlighter-rouge">item</code> data model backed by a datasource, added a <code class="highlighter-rouge">review</code> data model backed by another data source, added a relationship between the <code class="highlighter-rouge">item</code> and <code class="highlighter-rouge">review</code> models.</p>
+
+<p>In this tutorial you will extend the <code class="highlighter-rouge">inventory</code> application by adding a remote hook. Remote hooks allow you to provide pre- and post-processing to an API call, such as adding additional header information to a remote service or calculating a value, which is what you will do in this lab.</p>
+
+<p>Then, you will publish your LoopBack Inventory application to Bluemix where it will run</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="edit-the-application-configuration">3.1 - Edit the Application Configuration</h3>
+
+<p>Before publishing the API for our application, the configuration file that was generated for you needs to be edited. By default, the generated application uses a base path of <code class="highlighter-rouge">/api</code>. In the next few steps, you will modify the base path to listen on <code class="highlighter-rouge">/inventory</code>.</p>
+
+<ol>
+  <li>
+    <p>Using the text editor of choice, then navigate to the <code class="highlighter-rouge">ThinkIBM / inventory</code> folder.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/list-folder.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />LoopBack applications use a series of configuration files which drive the application runtime. For more information about these files, review the table in <a href="lab1.html#loopback-files">Lab 1</a>.</p>
+    </div>
+  </li>
+  <li>
+    <p>From the folder tree menu, expand the <code class="highlighter-rouge">server</code> folder and click on the <code class="highlighter-rouge">config.json</code> file to view the source.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/open-folder.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Edit line 2 of the <code class="highlighter-rouge">config.json</code> file. Change <code class="highlighter-rouge">/api</code> to <code class="highlighter-rouge">/inventory</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/atom-edit-config.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save the changes.</p>
+  </li>
+</ol>
+
+<h3 id="create-a-remote-hook">3.2 - Create a Remote Hook</h3>
+
+<p>Remote hooks are custom javascript code that execute before or after calling an operation on a LoopBack application.</p>
+
+<p>For more information on Remote Hooks please see:</p>
+
+<p><a href="https://docs.strongloop.com/display/public/LB/Remote+hooks">https://docs.strongloop.com/display/public/LB/Remote+hooks</a></p>
+
+<ol>
+  <li>
+    <p>In the your text editor, expand the local directory structure for the <code class="highlighter-rouge">common/models</code> location and open up the <code class="highlighter-rouge">item.js</code> file for editing.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/atom-item-file1.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You are going to update this file to include a new remote hook function which will run <em>after</em> a new review is submitted for an item. The function will take an average of all reviews for that item, then update the item rating in the data source.</p>
+  </li>
+  <li>
+    <p>Open up a new tab on your browser, and open the following file via github:</p>
+
+    <p><a href="https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab3/item.js">https://raw.githubusercontent.com/ibm-apiconnect/pot/gh-pages/assets/lab3/item.js</a></p>
+  </li>
+  <li>
+    <p>You have two choices in how to implement this change. You can either copy and paste in the code from github by simply copying the contents from the github to the clipboard and pasting it to your local <code class="highlighter-rouge">item.js</code> file.</p>
+  </li>
+  <li>
+    <p>Alternatively, you can copy and paste the contents of the text box below.  Be sure to <strong>Remove</strong> everything in the <code class="highlighter-rouge">item.js</code> file. Then paste the contents of your clipboard to update the file.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/2a.png" alt="" /></p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Item</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="cm">/* Inject DATE into new REVIEW */</span>
+        
+    <span class="nx">Item</span><span class="p">.</span><span class="nx">beforeRemote</span><span class="p">(</span><span class="s1">'prototype.__updateById__review'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">review</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">req</span><span class="p">;</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">date</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+      <span class="nx">next</span><span class="p">();</span>
+    <span class="p">});</span>
+        
+    <span class="cm">/* Inject DATE into new REVIEW */</span>
+        
+    <span class="nx">Item</span><span class="p">.</span><span class="nx">beforeRemote</span><span class="p">(</span><span class="s1">'prototype.__create__reviews'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">review</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">req</span><span class="p">;</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">date</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+      <span class="nx">next</span><span class="p">();</span>
+    <span class="p">});</span>
+        
+    <span class="cm">/* Update ITEM rating after new REVIEW is submitted */</span>
+        
+    <span class="nx">Item</span><span class="p">.</span><span class="nx">afterRemote</span><span class="p">(</span><span class="s1">'prototype.__create__reviews'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">remoteMethodOutput</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">itemId</span> <span class="o">=</span> <span class="nx">remoteMethodOutput</span><span class="p">.</span><span class="nx">itemId</span><span class="p">;</span>
+        
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"calculating new rating for item: "</span> <span class="o">+</span> <span class="nx">itemId</span><span class="p">);</span>
+        
+      <span class="kd">var</span> <span class="nx">searchQuery</span> <span class="o">=</span> <span class="p">{</span><span class="na">include</span><span class="p">:</span> <span class="p">{</span><span class="na">relation</span><span class="p">:</span> <span class="s1">'reviews'</span><span class="p">}};</span>
+        
+      <span class="nx">Item</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">itemId</span><span class="p">,</span> <span class="nx">searchQuery</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">findItemReviewRatings</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">findResult</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">reviewArray</span> <span class="o">=</span> <span class="nx">findResult</span><span class="p">.</span><span class="nx">reviews</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">reviewCount</span> <span class="o">=</span> <span class="nx">reviewArray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">ratingSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">reviewCount</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">ratingSum</span> <span class="o">+=</span> <span class="nx">reviewArray</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">rating</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="kd">var</span> <span class="nx">updatedRating</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">ratingSum</span> <span class="o">/</span> <span class="nx">reviewCount</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+        
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"new calculated rating: "</span> <span class="o">+</span> <span class="nx">updatedRating</span><span class="p">);</span>
+        
+        <span class="nx">findResult</span><span class="p">.</span><span class="nx">updateAttribute</span><span class="p">(</span><span class="s2">"rating"</span><span class="p">,</span> <span class="nx">updatedRating</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"item rating successfully updated"</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"error updating rating for item: "</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+        
+        <span class="nx">next</span><span class="p">();</span>
+      <span class="p">});</span>
+        
+    <span class="p">});</span>
+        
+<span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Save the changes to the <code class="highlighter-rouge">item.js</code>.</p>
+  </li>
+</ol>
+
+<h3 id="publish-app-to-bluemix">3.3 - Publish App to Bluemix</h3>
+
+<p>In this section, you will publish the <code class="highlighter-rouge">inventory</code> application to Bluemix</p>
+
+<h4 id="configure-the-developer-toolkit-to-communicate-with-api-connect">3.3.1 - Configure the Developer Toolkit to Communicate with API Connect</h4>
+
+<ol>
+  <li>
+    <p>Return to your <code class="highlighter-rouge">Terminal Emulator</code> session, or open a new one if you had closed it previously.</p>
+  </li>
+  <li>
+    <p>Ensure you are in the <code class="highlighter-rouge">~/ThinkIBM/inventory</code> project folder by typing the following command:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/ThinkIBM/inventory
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Launch the API Designer:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>apic edit
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Publish</code> icon.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/publishButton.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select <code class="highlighter-rouge">Add and Manage Targets</code> from the menu.</p>
+  </li>
+  <li>
+    <p>Select <code class="highlighter-rouge">Add IBM Bluemix target</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/15.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Provide connection information to sign into the IBM API Connect Bluemix service then click the <code class="highlighter-rouge">Sign in</code> button:</p>
+  </li>
+  <li>
+    <p>On the “Select an organization and catalog” screen, choose the <code class="highlighter-rouge">Sandbox</code> catalog and click the <code class="highlighter-rouge">Next</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/10.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Provide the name of your application. The name you provide here will be the name of the app inside of Bluemix once it’s published.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/select-your-inventory-app.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Make sure your app name is selected and click the <code class="highlighter-rouge">Save</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/select-your-inventory-app.png" alt="" /></p>
+  </li>
+</ol>
+
+<h4 id="publish-the-application">3.3.2 - Publish the Application</h4>
+
+<ol>
+  <li>
+    <p>Click <code class="highlighter-rouge">Publish</code> button once more and select our target catalog, indicated by the grey highlighting.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/select-publish-target.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the check box to select <code class="highlighter-rouge">Publish application</code>, then click the <code class="highlighter-rouge">Publish</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/publish-application.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    The Developer Toolkit will package up our Node.js StrongLoop application and deploy it to the runtime collective.
+    <br /><br />
+    We used the web UI in the previous few steps to publish the application. However, we could have also used the API Designer CLI to accomplish the same task.</p>
+    </div>
+  </li>
+  <li>
+    <p>Wait for the application publish process to complete:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/publish-app-success.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">x</code> button on your browser tab to close the API Designer.</p>
+  </li>
+  <li>
+    <p>Return to the terminal editor. Stop the API Designer process:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>control+c
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Notice that logs were generated during the application publishing process:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/2.png" alt="" /></p>
+  </li>
+  <li>
+    <p><strong>Note</strong> the contents of the <code class="highlighter-rouge">API target urls:</code> this value will be automatically propagated into a property called <code class="highlighter-rouge">runtime-url</code>  and placed into your <code class="highlighter-rouge">invoke</code> policy within the API Assembly.  This is what will tell the runtime which back-end service to call.  No further action on your part is required to configure this step.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab3/3.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+     Note that your API Target URL will be different for your application and is unique to you.
+     <br /><br />
+     You will not be able to test your application until you actually expose it as an API as it creates a specific TLS-Profile that only your specific API Connect instance can use.  You can confirm these changes by going into the API Assembly and clicking on the Assemble button.  Open up the Invoke step and you will be able to see what was created.
+     <br /><br /></p>
+    </div>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this lab you learned:</p>
+
+<ul>
+  <li>How to create a remote hook</li>
+  <li>How to test the remote hook</li>
+  <li>Publish App to Bluemix</li>
+</ul>
+
+<p>Proceed to <a href="lab4.html">Lab 4 - Configure and Secure an API</a></p>
+
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

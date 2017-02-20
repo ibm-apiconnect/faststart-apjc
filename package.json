@@ -1,0 +1,21 @@
+{
+  "name": "faststart-apjc-lab",
+  "version": "1.0.0",
+  "description": "**Learn the basics of API Connect by using these guides to build micro services and api proxies.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibm-apiconnect/faststart-apjc.git"
+  },
+  "author": "Jamil Spain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibm-apiconnect/faststart-apjc/issues"
+  },
+  "homepage": "https://github.com/ibm-apiconnect/faststart-apjc#readme",
+  "dependencies": {
+  }
+}

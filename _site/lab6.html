@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="API's published by API Connect are bundled into an object called a **Product**. The Product combines one or more API's with one or more Plans. A **Plan** is ...">
+<meta name="keywords" content=" ">
+<title>Lab 6 - Working with API Products | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 6 - Working with API Products</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">API's published by API Connect are bundled into an object called a **Product**. The Product combines one or more API's with one or more Plans. A **Plan** is effectively a contract between the API Provider and API Consumer which specifies the allowed rate of API calls over a given period of time.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to create a Product</li>
+  <li>How to attach APIs to a Product</li>
+  <li>How to create a Plan</li>
+  <li>How to publish a Product</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p>Your work as an Application Developer / API Designer is now complete. It’s time to switch roles and become an API Product Manager. The role of the API Product Manager is to take the developed assets and bundle them together using a go-to-market strategy.</p>
+
+<p>In the case of <strong>ThinkIBM</strong>, you will publish all of our API’s together as a single product offering to API Consumers. Additionally, you will create two plans which have different levels of access to your APIs.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="creating-an-api-product">6.1 - Creating an API Product</h3>
+
+<ol>
+  <li>
+    <p>If the API Designer screen has not already been launched, open a terminal and start the designer by issuing the following commands:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/ThinkIBM/inventory
+apic edit
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Switch to the <code class="highlighter-rouge">Products</code> tab</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/products.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the link for the <code class="highlighter-rouge">inventory</code> product.</p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />This product was automatically created during creation of the Inventory LoopBack application.</p>
+    </div>
+  </li>
+  <li>
+    <p>Edit the Product Info &amp; Contact details:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">think</code></p>
+
+      <p>Name: <code class="highlighter-rouge">think</code></p>
+
+      <p>Description: <code class="highlighter-rouge">The **think** product will provide really awesome APIs to your application.</code></p>
+
+      <p>Contact Name: <code class="highlighter-rouge">Thomas Watson</code></p>
+
+      <p>Contact Email: <code class="highlighter-rouge">thomas@think.ibm</code></p>
+
+      <p>Contact URL: <code class="highlighter-rouge">http://www.ibm.com</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-infocontact.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Specify a License and Terms of Service:</p>
+
+    <blockquote>
+      <p>License Name: <code class="highlighter-rouge">The MIT License (MIT)</code></p>
+
+      <p>License URL: <code class="highlighter-rouge">https://opensource.org/licenses/MIT</code></p>
+
+      <p>Terms of Service: <em>paste the contents of the file linked below:</em></p>
+
+      <ul>
+        <li><a href="http://github.com/ibm-apiconnect/pot/raw/gh-pages/assets/lab6/license.txt">http://github.com/ibm-apiconnect/pot/raw/gh-pages/assets/lab6/license.txt</a></li>
+      </ul>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-licensetos.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Modify the Visibility so that the <code class="highlighter-rouge">think</code> product is only visible to <code class="highlighter-rouge">Authenticated users</code>:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-visibility.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Navigate to the APIs section. Click the <code class="highlighter-rouge">+</code> button to add all of our new APIs to this product.</p>
+  </li>
+  <li>
+    <p>Ensure the checkboxes next to <code class="highlighter-rouge">financing</code>, <code class="highlighter-rouge">logistics</code> <code class="highlighter-rouge">oauth</code> and <code class="highlighter-rouge">inventory</code> are selected.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-apis.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Apply</code> button.</p>
+  </li>
+  <li>
+    <p>Navigate to the Plans section. Click the <code class="highlighter-rouge">+</code> button to add a new plan and specifying the following properties:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">Silver</code></p>
+
+      <p>Name: <code class="highlighter-rouge">silver</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Limited access to these APIs</code></p>
+
+      <p>Add rate limit of 100 with an interval of 1 hour</p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-silverplan.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+</code> button to create a new plan. Give it the following properties:</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">Gold</code></p>
+
+      <p>Name: <code class="highlighter-rouge">gold</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Unlimited access to these APIs for approved users</code></p>
+
+      <p>Rate limit: <code class="highlighter-rouge">Unlimited</code></p>
+
+      <p>Approval: check <code class="highlighter-rouge">Require subscription approval</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-goldplan.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save your changes.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/save-icon.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="publishing-the-api-product">6.2 - Publishing the API Product</h3>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Publish</code> icon.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/think-publish.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select our target:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/publish-target.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Check the box to <code class="highlighter-rouge">Stage or Publish products</code>:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/publish-product.png" alt="" /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><i class="fa fa-info-circle"></i> <b>Note:</b> <br />
+    Here we have the opportunity to select what gets published. If we were working on multiple API products as part of this project, we could chose specific ones to publish.
+    <br /><br />
+    Also, the option exists to only Stage the product. A Stage-only action implies that we’ll push the configuration to the Management server, but not actually make it available for consumption yet. The reason for doing this may be because your user permissions only allow staging, or that a different group is in charge of publishing Products.</p>
+    </div>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Publish</code> button to make the API available in the Developer Portal and enforced on our API Gateway.</p>
+  </li>
+  <li>
+    <p>Wait a moment while the Product is published, a <code class="highlighter-rouge">Success</code> message will appear letting you know the step is complete:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab6/publish-success.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Close the Firefox web browser.</p>
+  </li>
+  <li>
+    <p>In the <code class="highlighter-rouge">Terminal Emulator</code>, use the <code class="highlighter-rouge">control+c</code> keyboard command to quit the API Designer process.</p>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> You have completed Lab 6.</p>
+
+<p>In this lab, you learned:</p>
+
+<ul>
+  <li>About API Products</li>
+  <li>How to publish an API Product</li>
+</ul>
+
+<p>Proceed to <a href="lab7.html">Lab 7 - Consumer Experience</a></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

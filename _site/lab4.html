@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<head>
+    
+
+<!--
+HEY DUDE depth is 1
+-->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In this lab, you will learn how to configure and secure the `inventory` API created during loopback application generation. Using the graphical design tools ...">
+<meta name="keywords" content=" ">
+<title>Lab 4 - Configure and Secure an API | API Connect Fast Start APJC</title>
+<link rel="stylesheet" href="./css/syntax.css" }}">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./css/modern-business.css">
+<link rel="stylesheet" href="./css/lavish-bootstrap.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/customstyles.css">
+<link rel="stylesheet" href="./css/gcs.css" type="text/css"/>
+<link rel="stylesheet" href="./css/imagestyles.css" type="text/css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="./js/toc.js"></script>
+<script src="./js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="./images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://developer.ibm.com/apiconnect/feed.xml">
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-lg navbar-brand" href="./index.html">
+              <img src="./images/ibmlogo-white.png">&nbsp;<span class="projectTitle"><!-- removed fa-home --> API Connect Fast Start APJC</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/blog/" target="_blank">Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/answers/smartspace/apiconnect/" target="_blank">Forum</a></li>
+                        
+                        
+                        
+                        <li><a href="https://developer.ibm.com/apiconnect/doc/" target="_blank">Documentation</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <nav class="col-md-3">
+          
+
+<div style="position: fixed;overflow-y: auto;height: 90vh;">
+  <div class="sidebarTitle">
+    <a href="index.html">Labs</a>
+  </div>
+  <ul id="mysidebar" class="nav-list">
+    
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab0.html">Lab 0 - Setup IBM API Connect</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#create-your-bluemix-account">Create Your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account">Enable the API Connect Service on your Bluemix Account</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  tree-parent  ">
+     <a class="show-hide" href="#"></span> 
+    <a class="page-link" href="/faststart-apjc/lab1.html">Lab 1 - Create API to RESTful backend</a>
+      
+      <ul class="nav-list">
+          
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+      
+  </li>
+  
+
+
+
+  
+  
+  <li class="  leaf-node  ">
+    
+    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+      
+  </li>
+  
+
+
+
+      </ul>
+      
+  </li>
+  
+
+
+
+  </ul>
+</div>
+        </nav>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div class="post-header">
+   <h1 class="post-title-main">Lab 4 - Configure and Secure an API</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">In this lab, you will learn how to configure and secure the `inventory` API created during loopback application generation. Using the graphical design tools in API Designer, you will create an OAuth 2.0 provider API called `oauth` and then update the `inventory` API to use this provider. You will use the API Editor assembly view to specify the API's runtime behavior.</div>
+   
+
+    
+      
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+    <h2 id="objective">Objective</h2>
+
+<p>In the following lab, you will learn:</p>
+
+<ul>
+  <li>How to create an OAuth 2.0 Provider, specifically using the Resource Owner Password grant type.</li>
+  <li>How to secure an existing API using the newly created OAuth 2.0 Provider.</li>
+  <li>How to add catalog-specific properties to an API.</li>
+  <li>How to assemble an API implementation using the activity-log, set-variable and proxy policies</li>
+</ul>
+
+<h2 id="case-study-used-in-this-tutorial">Case Study Used in this Tutorial</h2>
+
+<p>In this tutorial, you will secure the Inventory API to protect the resources exposed by <strong>ThinkIBM</strong>. Consumers of your API will be required to obtain &amp; provide a valid OAuth token before they can invoke the Inventory API.</p>
+
+<h2 id="step-by-step-lab-instructions">Step by Step Lab Instructions</h2>
+
+<h3 id="working-with-the-inventory-api-in-api-designer">4.1 - Working with the Inventory API in API Designer</h3>
+
+<ol>
+  <li>
+    <p>First, launch API Designer by typing the following commands from your project directory:</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/ThinkIBM/inventory/
+apic edit
+</code></pre>
+    </div>
+
+    <p>API Designer will open in your browser. You may see an informational message about Draft APIs. (This message appears the very first time you launch the API Designer.) If so, click the <code class="highlighter-rouge">Got it!</code> button, when you are ready to proceed to creating an API.</p>
+
+    <p>You should see the APIs view, and a single API listed. The <code class="highlighter-rouge">inventory</code> API was automatically created during loopback app generation. We will edit this API at a later step.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/startapidesigner.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="adding-a-new-oauth-20-provider-api">4.2 - Adding a New OAuth 2.0 Provider API</h3>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+ Add</code> button and select <code class="highlighter-rouge">OAuth 2.0 Provider API</code> from the menu.</p>
+  </li>
+  <li>
+    <p>Specify the following properties and click the <code class="highlighter-rouge">Add</code> button to continue.</p>
+
+    <blockquote>
+      <p>Title: <code class="highlighter-rouge">oauth</code></p>
+
+      <p>Name: <code class="highlighter-rouge">oauth</code></p>
+
+      <p>Base Path: <code class="highlighter-rouge">/</code></p>
+
+      <p>Version: <code class="highlighter-rouge">1.0.0</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/newoauthprops.png" alt="" /></p>
+  </li>
+  <li>
+    <p>The API Editor will launch. If this is your first time using the API Editor, you will see an informational message. When you are ready to proceed, click the <code class="highlighter-rouge">Got it!</code> button to dismiss the message.</p>
+
+    <p>The API Editor opens to the newly created <code class="highlighter-rouge">oauth</code> API. The left hand side of the view provides shortcuts to various elements within the API definition: Info, Host, Base Path, etc. By default, the API Editor opens to the <code class="highlighter-rouge">Design</code> view, which provides a user-friendly way to view and edit your APIs. You may notice additional tabs labeled <code class="highlighter-rouge">Source</code> and <code class="highlighter-rouge">Assemble</code>. We will work with these views as well.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/newoauth-start.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Navigate to the <code class="highlighter-rouge">OAuth 2</code> section.</p>
+
+    <p>Over the next several steps, we will set up OAuth-specific options, such as client type (public vs confidential), valid access token scopes, supported authorization grant types, etc. The <a href="http://tools.ietf.org/html/rfc6749">OAuth 2.0 Specification</a> has detailed descriptions of each of the properties we are configuring here.</p>
+  </li>
+  <li>
+    <p>For the <code class="highlighter-rouge">Client type</code> field, click the drop down menu and select <code class="highlighter-rouge">Confidential</code>.</p>
+  </li>
+  <li>
+    <p>Three scopes were generated for you when the OAuth API Provider was generated: <code class="highlighter-rouge">scope1</code>, <code class="highlighter-rouge">scope2</code>, <code class="highlighter-rouge">scope3</code>.</p>
+  </li>
+  <li>
+    <p>Modify the values for <code class="highlighter-rouge">scope1</code>, set the following fields:</p>
+
+    <blockquote>
+      <p>Name: <code class="highlighter-rouge">inventory</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Access to Inventory API</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Delete <code class="highlighter-rouge">scope2</code> and <code class="highlighter-rouge">scope3</code> by clicking the trashcan icons to the right of the scope definitions.</p>
+  </li>
+  <li>
+    <p>We want to configure this provider to <em>only</em> support the Resource Owner Password Credentials grant type. Deselect the <code class="highlighter-rouge">Implicit</code>, <code class="highlighter-rouge">Application</code> and <code class="highlighter-rouge">Access Code</code> Grants, but leave <code class="highlighter-rouge">Password</code> checked.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/oauthgranttypes.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Set the remaining OAuth 2 settings as follows:</p>
+
+    <blockquote>
+      <p>Collect credentials using: <code class="highlighter-rouge">basic</code></p>
+
+      <p>Authenticate application users using: <code class="highlighter-rouge">Authentication URL</code></p>
+
+      <p>Authentication URL: <code class="highlighter-rouge">https://thinkibm-services.mybluemix.net/auth</code></p>
+
+      <p>Turn off the <code class="highlighter-rouge">Enable revocation</code> option</p>
+    </blockquote>
+
+    <p>When complete, your settings should look like this:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/1.png" alt="" /></p>
+
+    <div class="alert alert-warning" role="alert">
+      <p><i class="fa fa-warning"></i> <b>Important:</b> <br />The scope defined here must be identical to the scope that we define later when telling the <code class="highlighter-rouge">inventory</code> API to use this OAuth config. A common mistake is around case sensitivity. To avoid running into an error later, make sure that your scope is set to all <strong>lowercase</strong>.</p>
+    </div>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Save</code> icon in the top right corner of the editor to save your changes.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/save-icon.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="configuring-and-securing-the-inventory-api">4.3 - Configuring and Securing the Inventory API</h3>
+
+<ol>
+  <li>
+    <p>Click the <code class="highlighter-rouge">All APIs</code> link at the top left of the API Editor to return to list of APIs.</p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">inventory</code> link.</p>
+
+    <p>The inventory API will open in the API Editor, where we can make the necessary configuration changes. Over the next several steps you will set this API up to use the OAuth provider you just created.</p>
+  </li>
+  <li>
+    <p>Navigate to the <code class="highlighter-rouge">Base Path</code> section.</p>
+
+    <p>Change the base path from <code class="highlighter-rouge">/api</code> to <code class="highlighter-rouge">/inventory</code>.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/base-path.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Navigate to the <code class="highlighter-rouge">Security Definitions</code> section.</p>
+
+    <p>Click the <code class="highlighter-rouge">+</code> icon in the <strong>Security Definitions</strong> section and select <code class="highlighter-rouge">OAuth</code> from the menu.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/inv-addoauthsecuritydef.png" alt="" /></p>
+
+    <p>A new security definition is created for you, called <code class="highlighter-rouge">oauth-1 (OAuth)</code>.</p>
+  </li>
+  <li>
+    <p>Scroll down slightly to edit the newly created security definition.</p>
+
+    <p>Set it to have the following properties:</p>
+
+    <blockquote>
+      <p>Name: <code class="highlighter-rouge">oauth</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Resource Owner Password Grant Type</code></p>
+
+      <p>Flow: <code class="highlighter-rouge">Password</code></p>
+
+      <p>Token URL: <code class="highlighter-rouge">https://&lt;BluemixHost&gt;/&lt;BluemixOrgName&gt;-&lt;BluemixSpaceName&gt;/sb/oauth2/token</code></p>
+    </blockquote>
+
+    <p><strong>IMPORTANT</strong>:</p>
+
+    <div class="alert alert-warning" role="alert">
+      <p><i class="fa fa-warning"></i> <b>Important:</b> <br />
+    The Token URL will be based upon the location of your Org and Space running on Bluemix public.
+    <br /><br />You can find your base URL by logging into the API Manager on Bluemix. Log into Bluemix and launch the API Manager, then navigate into your catalog (the default catalog created is <code class="highlighter-rouge">Sandbox</code>).
+    <br /><br />From there go into <code class="highlighter-rouge">Settings</code>. If you scroll down a bit you will see what your <code class="highlighter-rouge">API Endpoint</code> is called, simply copy and paste the contents into the token URL, then append <code class="highlighter-rouge">/oauth2/token</code>.</p>
+    </div>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/bmx-api-endpoint.png" alt="" /></p>
+
+    <div class="alert alert-success" role="alert">
+      <p><i class="fa fa-check-square-o"></i> <b>Tip:</b> <br />We are going to need the Token URL later. Go ahead and save the Token URL value to a text editor for easy access.</p>
+    </div>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+</code> icon in the <strong>Scopes</strong> section to create a new scope. Set the following properties. Note the organization portion of the token URL will be different for each student.</p>
+
+    <blockquote>
+      <p>Scope Name: <code class="highlighter-rouge">inventory</code></p>
+
+      <p>Description: <code class="highlighter-rouge">Access to all inventory resources</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/3.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Navigate to the <code class="highlighter-rouge">Security</code> section and check the <code class="highlighter-rouge">oauth (OAuth)</code> checkbox.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/inv-security-addoauth.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save your changes.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/save-icon.png" alt="" /></p>
+
+    <p>Now that the API is secured using our OAuth provider, we can define how the API should behave when called. In the next two sections, we will configure the <code class="highlighter-rouge">inventory</code> API to call our inventory application which was published at the end of Lab 3.</p>
+  </li>
+</ol>
+
+<h3 id="defining-api-processing-behavior">4.4 - Defining API Processing Behavior</h3>
+<p>An API Assembly provides collection of policies which are enforced and executed on the API Gateway. Policies include actions like modifying the logging behavior and altering the message content or headers. Additionally, if the out of the box policies do not meet your specific needs, you may opt to create your own policy and have it available for API designers through the API Connect UI.</p>
+
+<ol>
+  <li>
+    <p>Switch to the <code class="highlighter-rouge">Assemble</code> tab. A simple assembly has been created for you.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/inv-assembly-start.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Modify your assembly to use DataPower Gateway policies.</p>
+
+    <p>Select the <code class="highlighter-rouge">DataPower Gateway policies</code> radio button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/filter-datapowerpolicies.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Add an <code class="highlighter-rouge">activity-log</code> policy to the assembly and configure it to log API payload.</p>
+
+    <p>Drag the <code class="highlighter-rouge">activity-log</code> policy from the list of available policies to the left of the <code class="highlighter-rouge">invoke</code> policy already created in your assembly.</p>
+  </li>
+  <li>
+    <p>Select the newly added <code class="highlighter-rouge">activity-log</code> step. A properties menu will open on the right of your screen.</p>
+
+    <p>Under <code class="highlighter-rouge">Content</code> select <code class="highlighter-rouge">payload</code> from the drop-down list.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/inv-assembly-logpayload.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">X</code> to close the activity-log editor menu</p>
+  </li>
+  <li>
+    <p>Save your changes.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/save-icon.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="validation">4.5 - Validation</h3>
+
+<p>We will validate the inventory application by using an Oauth test app we have running in Bluemix.</p>
+
+<ol>
+  <li>
+    <p>First, you need to attach the OAuth API to our <code class="highlighter-rouge">inventory</code> product.</p>
+
+    <p>Click on the <code class="highlighter-rouge">&lt;- All APIs</code> link, then click on the <code class="highlighter-rouge">Products</code> link to view the product list.</p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">inventory 1.0.0</code> product to open it for editing.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/open-inv-product.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Scroll down to the <strong>APIs</strong> section and click the <code class="highlighter-rouge">+</code> button.</p>
+  </li>
+  <li>
+    <p>Select the <code class="highlighter-rouge">oauth</code> API to add it to the product and click the <code class="highlighter-rouge">Apply</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/add-oauth-api-to-product.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Save the Product.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/save-product.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Publish your API to Bluemix clicking on the <code class="highlighter-rouge">Publish</code> button.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/publish.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on your Bluemix instance. <strong>Note:</strong> Each instance name is unique and will be different than the screenshot below.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/6.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select <code class="highlighter-rouge">Stage or Publish products</code> and then <code class="highlighter-rouge">Publish</code>.</p>
+
+    <p>Make sure that the option to publish the Application is <strong>NOT</strong> selected.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/7.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Open a new browser tab and navigate to your Bluemix environment and launch the API Manager.</p>
+  </li>
+  <li>
+    <p>Click on the Sandbox catalog and navigate to the <code class="highlighter-rouge">Settings</code> tab.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/catalog-settings.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on the <code class="highlighter-rouge">Show</code> button next to the Client ID and Client Secret fields in the <strong>Automatic Subscription</strong> section, we’re going to need these values in the next few steps.</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/show-client-creds.png" alt="" /></p>
+  </li>
+  <li>
+    <p>To test the API, we need to use a Web App to simulate the Oauth handshake. To do this, open a new browser tab and navigate to the following URL:</p>
+
+    <p><a href="https://thinkibm-services.mybluemix.net/oauthtester">https://thinkibm-services.mybluemix.net/oauthtester</a></p>
+  </li>
+  <li>
+    <p>Enter in the following values into the Form</p>
+
+    <blockquote>
+      <p>Token URL: <code class="highlighter-rouge">&lt; your token url &gt;</code></p>
+
+      <p>Client Id: <code class="highlighter-rouge">&lt; auto-subscribed client id &gt;</code></p>
+
+      <p>Client Secret: <code class="highlighter-rouge">&lt; auto-subscribed client secret &gt;</code></p>
+
+      <p>Scope: <code class="highlighter-rouge">inventory</code></p>
+    </blockquote>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/oauth-tester-form.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">Submit</code> button.</p>
+  </li>
+  <li>
+    <p>The OAuth Tester will attempt to call your Token URL and obtain an OAuth token. Once it receives a token, the tool will also call the <code class="highlighter-rouge">/inventory/items</code> API with a query filter to return back the first two data sets. If everything worked properly, you will see the token and the API response, similar to this:</p>
+
+    <p><img src="https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab4/oauth-test-success.png" alt="" /></p>
+
+    <div class="alert alert-troubleshooting" role="alert">
+      <p><i class="fa fa-cog"></i> <b>Troubleshooting:</b> <br />
+    The OAuth Tester client is an Angular-based web client. Logs for the tool can be found in your browser’s developer tool set.
+    <br /><br />
+    You can use the Console, Network and Application Session storage features to trace the calls and logs.</p>
+    </div>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>Congratulations!</strong> You have successfully configured and secured the inventory API. You will consume this API in a later step.</p>
+
+<p>Proceed to <a href="lab5.html">Lab 5 - Advanced API Assembly</a></p>
+
+
+    <div class="tags">
+      
+    </div>
+
+</div>
+
+<hr class="shaded"/>
+
+<footer id="container">
+            <div class="row">
+                <div class="col-md-6 footer-left">
+               &copy;2017 IBM. All rights reserved. <br />
+ Site last generated: Feb 20, 2017
+              </div>
+              <div class="col-md-6 footer-right">
+                <p><img src="./images/ibm-logo-sm.png" alt="IBM"/></p>
+              </div>
+            </div>
+</footer>
+
+
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+</body>
+
+</html>

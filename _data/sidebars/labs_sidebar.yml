@@ -1,0 +1,56 @@
+## definition of `menuitem`===========
+# title: string
+# url: string
+# output: [ enum{web} ] (expressed as comma separated string in YAML)
+# children?: [ menuitem ]
+
+## top level property=================
+# entries: [ menuitem ]
+
+title: Labs
+url: index.html
+children:
+
+- title: 'Lab 0 - Setup IBM API Connect'
+  url: '/faststart-apjc/lab0.html'
+  output: 'web'
+  children:
+
+  - title: 'Create Your Bluemix Account'
+    url: '/faststart-apjc/lab0.html#create-your-bluemix-account'
+    output: 'web'
+
+  - title: 'Enable the API Connect Service on your Bluemix Account'
+    url: '/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account'
+    output: 'web'
+
+
+- title: 'Lab 1 - Create API to RESTful backend'
+  url: '/faststart-apjc/lab1.html'
+  output: 'web'
+  children:
+
+  - title: 'Create the Transfer API Definition'
+    url: '/faststart-apjc/lab1.html#create-the-transfer-api-definition'
+    output: 'web'
+
+  - title: 'Create Definitions'
+    url: '/faststart-apjc/lab1.html#create-definitions'
+    output: 'web'
+
+  - title: 'Define Parameters'
+    url: '/faststart-apjc/lab1.html#define-parameters'
+    output: 'web'
+
+  - title: 'Define API Endpoint and Input'
+    url: '/faststart-apjc/lab1.html#define-api-endpoint-and-input'
+    output: 'web'
+
+  - title: 'API Assembly'
+    url: '/faststart-apjc/lab1.html#api-assembly'
+    output: 'web'
+
+  - title: 'Test API'
+    url: '/faststart-apjc/lab1.html#test-api'
+    output: 'web'
+    
