@@ -31,26 +31,26 @@ children:
   children:
 
   - title: 'Create the Transfer API Definition'
-    url: '/faststart-apjc/lab1.html#create-the-transfer-api-definition'
+    url: '/faststart-apjc/lab1.html#11---create-the-transfer-api-definition'
     output: 'web'
 
   - title: 'Create Definitions'
-    url: '/faststart-apjc/lab1.html#create-definitions'
+    url: '/faststart-apjc/lab1.html#12---create-definitions'
     output: 'web'
 
   - title: 'Define Parameters'
-    url: '/faststart-apjc/lab1.html#define-parameters'
+    url: '/faststart-apjc/lab1.html#13---define-parameters'
     output: 'web'
 
   - title: 'Define API Endpoint and Input'
-    url: '/faststart-apjc/lab1.html#define-api-endpoint-and-input'
+    url: '/faststart-apjc/lab1.html#14---define-api-endpoint-and-input'
     output: 'web'
 
   - title: 'API Assembly'
-    url: '/faststart-apjc/lab1.html#api-assembly'
+    url: '/faststart-apjc/lab1.html#15---api-assembly'
     output: 'web'
 
   - title: 'Test API'
-    url: '/faststart-apjc/lab1.html#test-api'
+    url: '/faststart-apjc/lab1.html#16---test-api'
     output: 'web'
     
