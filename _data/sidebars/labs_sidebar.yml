@@ -17,11 +17,11 @@ children:
   children:
 
   - title: 'Create Your Bluemix Account'
-    url: '/faststart-apjc/lab0.html#create-your-bluemix-account'
+    url: '/faststart-apjc/lab0.html#01---create-your-bluemix-account'
     output: 'web'
 
   - title: 'Enable the API Connect Service on your Bluemix Account'
-    url: '/faststart-apjc/lab0.html#enable-the-api-connect-service-on-your-bluemix-account'
+    url: '/faststart-apjc/lab0.html#02---enable-the-api-connect-service-on-your-bluemix-account'
     output: 'web'
 
 
