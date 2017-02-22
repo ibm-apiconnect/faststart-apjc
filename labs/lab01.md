@@ -126,7 +126,8 @@ In this section, we will learn how to use **Parameters** in the **Map** Assembly
       "remarks":"online purchase"
     }
 ```
-      ![](images/apjc/05.06.png)
+      
+  ![](images/apjc/05.06.png)
 
 1.  Click "Generate" button. API Connect will generate the schema in YAML format as the following screen:
 
@@ -150,7 +151,7 @@ In this section, we will learn how to use **Parameters** in the **Map** Assembly
   http://www.mocky.io/v2/57f281c90f0000a81ae25309
   ```
 
-      ![](images/apjc/05.10.png)
+  ![](images/apjc/05.10.png)
 
 ### 1.6 - Test API
 
