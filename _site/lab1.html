@@ -168,7 +168,7 @@ HEY DUDE depth is 1
   
   <li class="  leaf-node  ">
     
-    <a class="page-link" href="/faststart-apjc/lab1.html#create-the-transfer-api-definition">Create the Transfer API Definition</a>
+    <a class="page-link" href="/faststart-apjc/lab1.html#11---create-the-transfer-api-definition">Create the Transfer API Definition</a>
       
   </li>
   
@@ -179,7 +179,7 @@ HEY DUDE depth is 1
   
   <li class="  leaf-node  ">
     
-    <a class="page-link" href="/faststart-apjc/lab1.html#create-definitions">Create Definitions</a>
+    <a class="page-link" href="/faststart-apjc/lab1.html#12---create-definitions">Create Definitions</a>
       
   </li>
   
@@ -190,7 +190,7 @@ HEY DUDE depth is 1
   
   <li class="  leaf-node  ">
     
-    <a class="page-link" href="/faststart-apjc/lab1.html#define-parameters">Define Parameters</a>
+    <a class="page-link" href="/faststart-apjc/lab1.html#13---define-parameters">Define Parameters</a>
       
   </li>
   
@@ -201,7 +201,7 @@ HEY DUDE depth is 1
   
   <li class="  leaf-node  ">
     
-    <a class="page-link" href="/faststart-apjc/lab1.html#define-api-endpoint-and-input">Define API Endpoint and Input</a>
+    <a class="page-link" href="/faststart-apjc/lab1.html#14---define-api-endpoint-and-input">Define API Endpoint and Input</a>
       
   </li>
   
@@ -212,7 +212,7 @@ HEY DUDE depth is 1
   
   <li class="  leaf-node  ">
     
-    <a class="page-link" href="/faststart-apjc/lab1.html#api-assembly">API Assembly</a>
+    <a class="page-link" href="/faststart-apjc/lab1.html#15---api-assembly">API Assembly</a>
       
   </li>
   
@@ -223,7 +223,7 @@ HEY DUDE depth is 1
   
   <li class="  leaf-node  ">
     
-    <a class="page-link" href="/faststart-apjc/lab1.html#test-api">Test API</a>
+    <a class="page-link" href="/faststart-apjc/lab1.html#16---test-api">Test API</a>
       
   </li>
   
@@ -300,24 +300,22 @@ $('#toc').on('click', 'a', function() {
 <h3 id="create-the-transfer-api-definition">1.1 - Create the Transfer API Definition</h3>
 
 <ol>
-  <li>Go to the Drafts screen by click on “»” to bring up the side menu and select “Drafts”</li>
-</ol>
+  <li>
+    <p>Go to the Drafts screen by click on “»” to bring up the side menu and select “Drafts”</p>
 
-<p><img src="images/apjc/01.01.png" alt="" /></p>
-
-<ol>
+    <p><img src="images/apjc/01.01.png" alt="" /></p>
+  </li>
   <li>
     <p>Select “APIs” tab</p>
   </li>
   <li>
     <p>Click “Add” and select “New API”</p>
+
+    <p><img src="images/apjc/01.02.png" alt="" /></p>
   </li>
-</ol>
-
-<p><img src="images/apjc/01.02.png" alt="" /></p>
-
-<ol>
-  <li>In the new API pop-up dialog, fill up the details as following:</li>
+  <li>
+    <p>In the new API pop-up dialog, fill up the details as following:</p>
+  </li>
 </ol>
 
 <p><img src="images/apjc/01.03.png" alt="" /></p>
@@ -350,16 +348,15 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>
     <p>Click “+” to create a new parameter <strong>accountNumber</strong> and fill up the details as following. Do note you need to select <strong>Path</strong> in the Located in drop-down field.</p>
+
+    <p><img src="images/apjc/03.01.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Create another parameter <strong>transferDetail</strong>,  and this time will  select <strong>Body</strong> in the <strong>Located in</strong> and <strong>Transfer</strong> as <strong>Type</strong>. Do note the screen doesn’t display <strong>Transfer</strong> even after you have selected it.</p>
+
+    <p><img src="images/apjc/03.02.png" alt="" /></p>
   </li>
 </ol>
-
-<p><img src="images/apjc/03.01.png" alt="" /></p>
-
-<ol>
-  <li>Create another parameter <strong>transferDetail</strong>,  and this time will  select <strong>Body</strong> in the <strong>Located in</strong> and <strong>Transfer</strong> as <strong>Type</strong>. Do note the screen doesn’t display <strong>Transfer</strong> even after you have selected it.</li>
-</ol>
-
-<p><img src="images/apjc/03.02.png" alt="" /></p>
 
 <h3 id="define-api-endpoint-and-input">1.4 - Define API Endpoint and Input</h3>
 
@@ -389,35 +386,29 @@ $('#toc').on('click', 'a', function() {
 <p>In this section, we will learn how to use <strong>Parameters</strong> in the <strong>Map</strong> Assembly.</p>
 
 <ol>
-  <li>Click on <strong>Assemble</strong> tab</li>
-</ol>
+  <li>
+    <p>Click on <strong>Assemble</strong> tab</p>
 
-<p><img src="images/apjc/05.01.png" alt="" /></p>
+    <p><img src="images/apjc/05.01.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Drag <strong>Map</strong> assembly and place it before <strong>Invoke</strong>.</p>
 
-<ol>
-  <li>Drag <strong>Map</strong> assembly and place it before <strong>Invoke</strong>.</li>
-</ol>
+    <p><img src="images/apjc/05.02.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on “+” to maximize the <strong>Map</strong> configuration screen.</p>
 
-<p><img src="images/apjc/05.02.png" alt="" /></p>
-
-<ol>
-  <li>Click on “+” to maximize the <strong>Map</strong> configuration screen.</li>
-</ol>
-
-<p><img src="images/apjc/05.03.png" alt="" /></p>
-
-<ol>
+    <p><img src="images/apjc/05.03.png" alt="" /></p>
+  </li>
   <li>
     <p>Click on the “pencil” icon to “Edit Input”</p>
   </li>
   <li>
     <p>Click <strong>+ parameters for operation…</strong> button and select <strong>post/{accountNumber}</strong> operation.</p>
+
+    <p><img src="images/apjc/05.04.png" alt="" /></p>
   </li>
-</ol>
-
-<p><img src="images/apjc/05.04.png" alt="" /></p>
-
-<ol>
   <li>
     <p>Click “Done” to close the “Edit Input” screen.</p>
   </li>
@@ -429,49 +420,45 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>
     <p>Select “Inline schema” in the <strong>Definition</strong> drop-down</p>
+
+    <p><img src="images/apjc/05.05.png" alt="" /></p>
+  </li>
+  <li>
+    <p>In the “Provide a schema” pop-up dialog, select “Generate from sample JSON”. Copy and paste following sample JSON.</p>
   </li>
 </ol>
 
-<p><img src="images/apjc/05.05.png" alt="" /></p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    <span class="o">{</span>
+      <span class="s2">"fromAccountNumber"</span>:<span class="s2">"123-123-123-3"</span>,
+      <span class="s2">"toAccountNumber"</span>:<span class="s2">"123-123-123-3"</span>,
+      <span class="s2">"amount"</span>:199.99,
+      <span class="s2">"remarks"</span>:<span class="s2">"online purchase"</span>
+    <span class="o">}</span>
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>  ![](images/apjc/05.06.png)
+</code></pre>
+</div>
 
 <ol>
-  <li>In the “Provide a schema” pop-up dialog, select “Generate from sample JSON”. Copy and paste following sample JSON.</li>
-</ol>
+  <li>
+    <p>Click “Generate” button. API Connect will generate the schema in YAML format as the following screen:</p>
 
-<p><code class="highlighter-rouge">bash
-  {
-    "fromAccountNumber":"123-123-123-3",
-    "toAccountNumber":"123-123-123-3",
-    "amount":199.99,
-    "remarks":"online purchase"
-  }
- </code>
-  <img src="images/apjc/05.06.png" alt="" /></p>
-
-<ol>
-  <li>Click “Generate” button. API Connect will generate the schema in YAML format as the following screen:</li>
-</ol>
-
-<p><img src="images/apjc/05.07.png" alt="" /></p>
-
-<ol>
+    <p><img src="images/apjc/05.07.png" alt="" /></p>
+  </li>
   <li>
     <p>Click “Done” to close the “Provide a schema” dialog.</p>
   </li>
   <li>
     <p>Click “Done” to close the Output.</p>
+
+    <p><img src="images/apjc/05.08.png" alt="" /></p>
   </li>
-</ol>
+  <li>
+    <p>Click <strong>accountNumber</strong> from Input and link to <strong>fromAccountNumber</strong> Output. Do the rest as following screen:</p>
 
-<p><img src="images/apjc/05.08.png" alt="" /></p>
-
-<ol>
-  <li>Click <strong>accountNumber</strong> from Input and link to <strong>fromAccountNumber</strong> Output. Do the rest as following screen:</li>
-</ol>
-
-<p><img src="images/apjc/05.09.png" alt="" /></p>
-
-<ol>
+    <p><img src="images/apjc/05.09.png" alt="" /></p>
+  </li>
   <li>
     <p>Click the X to close the Map assembly.</p>
   </li>
@@ -484,47 +471,46 @@ $('#toc').on('click', 'a', function() {
   http://www.mocky.io/v2/57f281c90f0000a81ae25309
  </code></p>
 
-<p><img src="images/apjc/05.10.png" alt="" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  ![](images/apjc/05.10.png)
+</code></pre>
+</div>
 
 <h3 id="test-api">1.6 - Test API</h3>
 
 <p>In this section, we will learn how to test the API in the Assembly.</p>
 
 <ol>
-  <li>Click on the “Play” button. The test panel will expand at the left.</li>
+  <li>
+    <p>Click on the “Play” button. The test panel will expand at the left.</p>
+
+    <p><img src="images/apjc/06.01.png" alt="" /></p>
+  </li>
+  <li>
+    <p>You need to setup the <strong>Product</strong> for this new API. Enter <strong>Transfers</strong> in the new product <strong>Name</strong>. Click <strong>Create and Publish</strong> button. Then click the next button.</p>
+
+    <p><img src="images/apjc/06.02.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Select the <strong>post/{accountNumber}</strong> Operation to be tested</p>
+
+    <p><img src="images/apjc/06.03.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Enter a test parameter for accountNumber <strong>123-123-123-3</strong>. For <strong>transferDetails</strong>, you can click on <strong>Generate</strong> to let the system generate sample data automatically.</p>
+
+    <p><img src="images/apjc/06.04.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Invoke</strong> button to invoke the API. You should receive response as following:</p>
+
+    <p><img src="images/apjc/06.05.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Click on <strong>Debug</strong> button to inspect the assembly details:</p>
+
+    <p><img src="images/apjc/06.06.png" alt="" /></p>
+  </li>
 </ol>
-
-<p><img src="images/apjc/06.01.png" alt="" /></p>
-
-<ol>
-  <li>You need to setup the <strong>Product</strong> for this new API. Enter <strong>Transfers</strong> in the new product <strong>Name</strong>. Click <strong>Create and Publish</strong> button. Then click the next button.</li>
-</ol>
-
-<p><img src="images/apjc/06.02.png" alt="" /></p>
-
-<ol>
-  <li>Select the <strong>post/{accountNumber}</strong> Operation to be tested</li>
-</ol>
-
-<p><img src="images/apjc/06.03.png" alt="" /></p>
-
-<ol>
-  <li>Enter a test parameter for accountNumber <strong>123-123-123-3</strong>. For <strong>transferDetails</strong>, you can click on <strong>Generate</strong> to let the system generate sample data automatically.</li>
-</ol>
-
-<p><img src="images/apjc/06.04.png" alt="" /></p>
-
-<ol>
-  <li>Click <strong>Invoke</strong> button to invoke the API. You should receive response as following:</li>
-</ol>
-
-<p><img src="images/apjc/06.05.png" alt="" /></p>
-
-<ol>
-  <li>Click on <strong>Debug</strong> button to inspect the assembly details:</li>
-</ol>
-
-<p><img src="images/apjc/06.06.png" alt="" /></p>
 
 <h2 id="conclusion">Conclusion</h2>
 

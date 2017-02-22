@@ -29,13 +29,13 @@ For this lab, you need to have a Bluemix account and enabling the API Connect Es
 
 1.  Go to the Drafts screen by click on ">>" to bring up the side menu and select "Drafts"
 
-  ![](images/apjc/01.01.png)
+      ![](images/apjc/01.01.png)
 
 1.  Select "APIs" tab
 
 1.  Click "Add" and select "New API"
 
-  ![](images/apjc/01.02.png)
+      ![](images/apjc/01.02.png)
 
 1.  In the new API pop-up dialog, fill up the details as following:
 
@@ -61,11 +61,11 @@ In this section, we will define 2 parameters:
 
 1.  Click "+" to create a new parameter **accountNumber** and fill up the details as following. Do note you need to select **Path** in the Located in drop-down field.
 
-  ![](images/apjc/03.01.png)
+      ![](images/apjc/03.01.png)
 
 1.  Create another parameter **transferDetail**,  and this time will  select **Body** in the **Located in** and **Transfer** as **Type**. Do note the screen doesn't display **Transfer** even after you have selected it.
 
-  ![](images/apjc/03.02.png)
+      ![](images/apjc/03.02.png)
 
 ### 1.4 - Define API Endpoint and Input
 
@@ -89,21 +89,21 @@ In this section, we will learn how to use **Parameters** in the **Map** Assembly
 
 1.  Click on **Assemble** tab
 
-  ![](images/apjc/05.01.png)
+      ![](images/apjc/05.01.png)
 
 1.  Drag **Map** assembly and place it before **Invoke**.
 
-  ![](images/apjc/05.02.png)
+      ![](images/apjc/05.02.png)
 
 1.  Click on "+" to maximize the **Map** configuration screen.
 
-  ![](images/apjc/05.03.png)
+      ![](images/apjc/05.03.png)
 
 1.  Click on the "pencil" icon to "Edit Input"
 
 1.  Click **+ parameters for operation...** button and select **post/{accountNumber}** operation.
 
-  ![](images/apjc/05.04.png)
+      ![](images/apjc/05.04.png)
 
 1.  Click "Done" to close the "Edit Input" screen.
 
@@ -113,33 +113,34 @@ In this section, we will learn how to use **Parameters** in the **Map** Assembly
 
 1.  Select "Inline schema" in the **Definition** drop-down
 
-  ![](images/apjc/05.05.png)
+      ![](images/apjc/05.05.png)
 
 1.  In the "Provide a schema" pop-up dialog, select "Generate from sample JSON". Copy and paste following sample JSON.
 
-  ```bash
-  {
-    "fromAccountNumber":"123-123-123-3",
-    "toAccountNumber":"123-123-123-3",
-    "amount":199.99,
-    "remarks":"online purchase"
-  }
-  ```
-  ![](images/apjc/05.06.png)
+
+```bash
+    {
+      "fromAccountNumber":"123-123-123-3",
+      "toAccountNumber":"123-123-123-3",
+      "amount":199.99,
+      "remarks":"online purchase"
+    }
+```
+      ![](images/apjc/05.06.png)
 
 1.  Click "Generate" button. API Connect will generate the schema in YAML format as the following screen:
 
-  ![](images/apjc/05.07.png)
+      ![](images/apjc/05.07.png)
 
 1.  Click "Done" to close the "Provide a schema" dialog.
 
 1.  Click "Done" to close the Output.
 
-  ![](images/apjc/05.08.png)
+      ![](images/apjc/05.08.png)
 
 1.  Click **accountNumber** from Input and link to **fromAccountNumber** Output. Do the rest as following screen:
 
-  ![](images/apjc/05.09.png)
+      ![](images/apjc/05.09.png)
 
 1.  Click the X to close the Map assembly.
 
@@ -149,7 +150,7 @@ In this section, we will learn how to use **Parameters** in the **Map** Assembly
   http://www.mocky.io/v2/57f281c90f0000a81ae25309
   ```
 
-  ![](images/apjc/05.10.png)
+      ![](images/apjc/05.10.png)
 
 ### 1.6 - Test API
 
@@ -157,27 +158,27 @@ In this section, we will learn how to test the API in the Assembly.
 
 1.  Click on the "Play" button. The test panel will expand at the left.
 
-  ![](images/apjc/06.01.png)
+    ![](images/apjc/06.01.png)
 
 1.  You need to setup the **Product** for this new API. Enter **Transfers** in the new product **Name**. Click **Create and Publish** button. Then click the next button.
 
-  ![](images/apjc/06.02.png)
+    ![](images/apjc/06.02.png)
 
 1.  Select the **post/{accountNumber}** Operation to be tested
 
-  ![](images/apjc/06.03.png)
+    ![](images/apjc/06.03.png)
 
 1.  Enter a test parameter for accountNumber **123-123-123-3**. For **transferDetails**, you can click on **Generate** to let the system generate sample data automatically.
 
-  ![](images/apjc/06.04.png)
+    ![](images/apjc/06.04.png)
 
 1.  Click **Invoke** button to invoke the API. You should receive response as following:
 
-  ![](images/apjc/06.05.png)
+    ![](images/apjc/06.05.png)
 
 1.  Click on **Debug** button to inspect the assembly details:
 
-  ![](images/apjc/06.06.png)
+    ![](images/apjc/06.06.png)
 
 ## Conclusion
 
