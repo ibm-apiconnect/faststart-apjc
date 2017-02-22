@@ -64,7 +64,7 @@ If you already has a Bluemix account, jump to section 0.3 - Enable the API Conne
 
     ![](https://github.com/ibm-apiconnect/pot/raw/gh-pages/images/lab1/mac-bluemix-setup-complete.png)
 
-### 0.3 - Enable the API Connect Service on your Bluemix Account
+### 0.2 - Enable the API Connect Service on your Bluemix Account
 
 1.  Once in the catalog, you can search for the API Connect service by entering in `API Connect` in the search box next to the magnifying glass icon.  Click on the `API Connect` Icon to install a new instance of API Connect into your Bluemix space.
 

@@ -25,7 +25,7 @@ For this lab, you need to have a Bluemix account and enabling the API Connect Es
 
 ## Step by Step Lab Instructions
 
-### 2.1 - Create the Transfer API Definition
+### 1.1 - Create the Transfer API Definition
 
 1.  Go to the Drafts screen by click on ">>" to bring up the side menu and select "Drafts"
 
@@ -41,7 +41,7 @@ For this lab, you need to have a Bluemix account and enabling the API Connect Es
 
   ![](images/apjc/01.03.png)
 
-### 2.2 - Create Definitions
+### 1.2 - Create Definitions
 
 1.  Next, you're going to define the JSON object for the HTTP body input. The JSON object holds the transfer details.
 
@@ -51,7 +51,7 @@ For this lab, you need to have a Bluemix account and enabling the API Connect Es
 
   ![](images/apjc/02.01.png)
 
-### 2.3 - Define Parameters
+### 1.3 - Define Parameters
 
 In this section, we will define 2 parameters:
   + First is the parameter in the API URI. The parameter is the user's bank account number. In the case: https://gateway/transfers/**{accountNumber}**
@@ -67,7 +67,7 @@ In this section, we will define 2 parameters:
 
   ![](images/apjc/03.02.png)
 
-### 2.4 - Define API Endpoint and Input
+### 1.4 - Define API Endpoint and Input
 
 Next, we will define the API endpoint and input parameters for API consumer
 
@@ -83,7 +83,7 @@ Next, we will define the API endpoint and input parameters for API consumer
 1.  **Add Operation** and select **Post**.
 
 
-### 2.5 - API Assembly
+### 1.5 - API Assembly
 
 In this section, we will learn how to use **Parameters** in the **Map** Assembly.
 
@@ -151,7 +151,7 @@ In this section, we will learn how to use **Parameters** in the **Map** Assembly
 
   ![](images/apjc/05.10.png)
 
-### 2.6 - Test API
+### 1.6 - Test API
 
 In this section, we will learn how to test the API in the Assembly.
 
@@ -178,3 +178,12 @@ In this section, we will learn how to test the API in the Assembly.
 1.  Click on **Debug** button to inspect the assembly details:
 
   ![](images/apjc/06.06.png)
+
+## Conclusion
+
+In this lab you learned:
+
++ How to define input parameter and definition for the API
++ How to use the input parameter and definition in the API Assembly
++ How to create inline schema from sample JSON
++ How to use Map to create HTTP body for the RESTful backend
